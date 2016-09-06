@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CUSTOMER_SQLModelStoreContainer" CdmEntityContainer="CUSTOMER_SQLEntities">
+    <EntitySetMapping Name="ABOUT">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.ABOUT">
+        <MappingFragment StoreEntitySet="ABOUT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="sliderimage" ColumnName="sliderimage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="videoUrl" ColumnName="videoUrl" />
+          <ScalarProperty Name="statusVideo" ColumnName="statusVideo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CONTACT">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.CONTACT">
+        <MappingFragment StoreEntitySet="CONTACT">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="mapImage" ColumnName="mapImage" />
+          <ScalarProperty Name="mapTitle" ColumnName="mapTitle" />
+          <ScalarProperty Name="mailadress" ColumnName="mailadress" />
+          <ScalarProperty Name="adress" ColumnName="adress" />
+          <ScalarProperty Name="telephone1" ColumnName="telephone1" />
+          <ScalarProperty Name="telephone2" ColumnName="telephone2" />
+          <ScalarProperty Name="telephone3" ColumnName="telephone3" />
+          <ScalarProperty Name="logoImage" ColumnName="logoImage" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEES">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.EMPLOYEES">
+        <MappingFragment StoreEntitySet="EMPLOYEES">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ICONS">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.ICONS">
+        <MappingFragment StoreEntitySet="ICONS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="iconname" ColumnName="iconname" />
+          <ScalarProperty Name="icondescription" ColumnName="icondescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MENU">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="url" ColumnName="url" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NEWSLETTER">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.NEWSLETTER">
+        <MappingFragment StoreEntitySet="NEWSLETTER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKILL">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.SKILL">
+        <MappingFragment StoreEntitySet="SKILL">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="iconName" ColumnName="iconName" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLIDER">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.SLIDER">
+        <MappingFragment StoreEntitySet="SLIDER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="imageStatus" ColumnName="imageStatus" />
+          <ScalarProperty Name="imageDescription" ColumnName="imageDescription" />
+          <ScalarProperty Name="videoUrl" ColumnName="videoUrl" />
+          <ScalarProperty Name="statusVideo" ColumnName="statusVideo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SOCIALS">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.SOCIALS">
+        <MappingFragment StoreEntitySet="SOCIALS">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="socialUrl" ColumnName="socialUrl" />
+          <ScalarProperty Name="socialName" ColumnName="socialName" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORK">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.WORK">
+        <MappingFragment StoreEntitySet="WORK">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="contentUrl" ColumnName="contentUrl" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

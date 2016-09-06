@@ -1,0 +1,29 @@
+﻿@model CompanyWeb.Web.Models.HomeViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section header{
+    @Html.Partial("Partials/_header/_slider", Model.SliderListModel)
+}
+
+
+@{
+    Html.RenderPartial("Partials/_body/_testimonials", Model.ReferenceListModel);
+
+    Html.RenderPartial("Partials/_body/_services",Model.ServiceListModel);
+
+    <section class="about-us" id="aboutus">
+        <div class="container">
+            @Html.Partial("Partials/_body/_about",Model.AboutModel)
+            @Html.Partial("Partials/_body/_references", Model.ReferenceListModel)
+        </div>
+    </section>
+    Html.RenderPartial("Partials/_body/_ourteam",Model.EmployeeListModel);
+    Html.RenderPartial("Partials/_body/_blogs",Model.BlogListModel);
+    Html.RenderPartial("Partials/_body/_contact", Model.ContactModel);
+}
+
+

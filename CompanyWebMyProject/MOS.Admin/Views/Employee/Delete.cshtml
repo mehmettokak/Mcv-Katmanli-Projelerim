@@ -1,0 +1,102 @@
+﻿@model CompanyWeb.Admin.Models.EmployeeViewModel
+    @using CompanyWeb.Admin.Resources.Employee
+@{
+    ViewBag.Title = EmployeeResource.Delete;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>@EmployeeResource.ReferenceDeleteProcess</h3>
+<div>
+    
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @EmployeeResource.FirstName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+        <dt>
+            @EmployeeResource.LastName
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+        <dt>
+            @EmployeeResource.AvatarUrl
+        </dt>
+        <dd>
+            @{
+                if (!string.IsNullOrEmpty(Model.AvatarURL))
+                {
+                    <text>
+                        <img src="@Model.AvatarURL" alt="" style="max-height: 300px" />
+                    </text>
+                }
+            }
+        </dd>
+        <dt>
+            @EmployeeResource.Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+        <dt>
+            @EmployeeResource.Description
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+        <dt>
+            @EmployeeResource.Content
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Content)
+        </dd>
+        <dt>
+            @EmployeeResource.EMail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @EmployeeResource.MobilePhone
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MobilePhone)
+        </dd>
+        <dt>
+            @EmployeeResource.IsActive
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt>
+            @EmployeeResource.RowNumber
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RowNumber)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-2 col-md-10">
+            @Html.ActionLink(EmployeeResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+            <input type="submit" value="@EmployeeResource.Delete" class="btn btn-danger" />
+        </div>
+    }
+</div>
+

@@ -1,0 +1,132 @@
+﻿@model Customer.Models.Classes.Footer.SocialModel
+@{
+    ViewBag.Title = "SocialDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Social";
+    TempData["page1"] = "SocialDetails";
+     
+}
+@Html.Partial("Partials/_pageBar")
+<div class="profile">
+    <div class="tabbable-line tabbable-full-width">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab_1_1" data-toggle="tab"> Overview </a>
+            </li>
+            <li>
+                <a href="#tab_1_3" data-toggle="tab"> Account </a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="tab_1_1">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="list-unstyled profile-nav">
+                            <li>
+                                <div class="socicons">
+                                    <div class="socicon-btn socicon-btn-circle socicon-solid bg-green font-white bg-hover-grey-salsa socicon-@Model.SocialName tooltips"></div>
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-8 profile-info">
+                                <h1 class="font-green sbold uppercase">@Model.SocialName.ToUpper()</h1>
+                                <p>
+                                    Url : @Model.SocialUrl
+                                </p>
+
+                                <ul class="list-inline">
+
+                                    <li>
+                                        <i class="fa fa-calendar"></i> Sıra No : @Model.Order
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-briefcase"></i> Durum : @Model.Status
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--end row-->
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab_1_3">
+                <div class="row profile-account">
+                    <div class="col-md-3">
+                        <ul class="ver-inline-menu tabbable margin-bottom-10">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab_1-1">
+                                    <i class="fa fa-cog"></i> Social Info
+                                </a>
+                                <span class="after"> </span>
+                            </li>
+
+
+                        </ul>
+
+
+                    </div>
+                    @using (Html.BeginForm("SetSocialDetails", "Home", FormMethod.Post, new {  autocomplete = "off" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "Aşağıdaki sorunlar oluştu!")
+                        @Html.HiddenFor(model => Model.Id)
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                                <div id="tab_1-1" class="tab-pane active">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SocialName)
+                                        @Html.DropDownListFor(model => model.SocialName, (SelectList)ViewData["SOCIAL"])
+                                        @Html.ValidationMessageFor(model => model.SocialName)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.SocialUrl)
+                                        @Html.TextAreaFor(model => model.SocialUrl, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.SocialUrl)
+                                    </div>
+
+                                    
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Order)
+                                        @Html.TextBoxFor(model => model.Order, new { @class = "form-control", @type = "number", @min = "1" })
+                                        @Html.ValidationMessageFor(model => model.Order)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Status)
+                                        @Html.CheckBoxFor(model => model.Status, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Status)
+                                    </div>
+                                    <div class="margiv-top-10">
+                                        <button type="submit" class="btn green"> Kaydet</button>
+                                        <a href="javascript:;" class="btn default"> Vazgeç </a>
+                                    </div>
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    }
+
+                    <!--end col-md-9-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+

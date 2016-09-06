@@ -1,0 +1,78 @@
+﻿@model List<Customer.Models.Classes.Contact.ContactModel>
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Contact";
+}
+
+@Html.Partial("Partials/_pageBar")
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> Contact @TempData["err"]</span>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                    <thead>
+                        <tr>
+                          <th>Logo Resim</th>
+                            <th>Başlık </th>
+                            <th> Mail Adres  </th>
+                            <th> Telefon  </th>
+                            <th>Ayarlar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr class="odd gradeX">
+                               
+                                <td>
+                                    <img style="height:30px;width:100px;" src="@item.LogoImage" />
+                                </td>
+                                <td>
+                                    @item.MapTitle
+                                </td>
+                                <td>
+
+                                    <div class="form-group">
+                                        @item.MailAdress
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="form-group">
+                                        @item.Telephone1
+                                    </div>
+                                </td>
+
+
+                                <td>
+                                    <a href="/Admin/Home/ContactDetails/@item.Id" class="btn btn-outline btn-circle btn-sm dark black">
+                                        <i class="fa fa-plus"></i> Detay
+                                    </a>
+
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+
+

@@ -1,0 +1,33 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>JQuery</title>
+   
+</head>
+<body>  
+    <img src="#" class="resim" alt="Alternate Text" />
+
+</body>
+</html>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+@*Fonksiyon olusturma ve kullanma,tıklanma metodu *@
+
+<script type="text/javascript">
+    $("button").click(function () {
+        var durum = $("input[type=checkbox]:checked").val();
+        if (durum) {
+            alert("işleme Devam edebilirsiniz.");
+        }
+        else {
+            alert("işleme dewam edemezsiniz.");
+        }
+    });
+  
+ </script>

@@ -1,0 +1,69 @@
+﻿@model CompanyWeb.Web.Models.EmployeeViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content" class="site-content">
+    <div class="container">
+        <div class="content-left-wrap col-md-9">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                    <header class="page-header">
+                        <h1 class="page-title">@Model.FirstName @Model.LastName</h1>
+
+                    </header>
+                    <article id="post-3807" class="post-3807 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                        <div class="listpost-content-wrap">
+                            <div class="list-post-top">
+                                <div class="post-img-wrap">
+
+                                    <img width="250" height="250" src="@Model.AvatarURL" tppabs="#" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="@Model.FirstName @Model.LastName">
+
+                                </div>
+                                <div class="entry-content">
+                                    <p>@Model.Content</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+
+                    <div class="clear"></div>
+
+                </main>
+            </div>
+        </div>
+        <div class="sidebar-wrap col-md-3 content-left-wrap">
+            <div id="secondary" class="widget-area" role="complementary">
+
+                <aside id="categories-2" class="widget widget_categories">
+                    <h2 class="widget-title">Danışmanlarınız</h2>
+                    <ul>
+                        @foreach (var item in Model.Employees)
+                        {
+                            <li class="cat-item cat-item-1">
+                                <a href="/Employee/Index/@item.ID" tppabs="#">@item.FirstName @item.LastName</a>
+                                @*<ul class="social">
+                                    @foreach (var item1 in item.SocialLinks)
+                                        {
+                                            <li>
+                                                <a target="_blank" href="@item1.LinkURL"><i class="@item1.IconURL"></i></a>
+                                            </li>
+                                        }
+                                </ul>*@
+
+                            </li>
+
+                        }
+
+
+                    </ul>
+                </aside>
+
+            </div>
+        </div>
+    </div>
+</div>
+

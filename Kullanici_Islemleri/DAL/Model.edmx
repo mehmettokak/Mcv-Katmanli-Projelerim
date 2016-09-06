@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="USER_SQLModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ROLESUBROLE">
+          <Key>
+            <PropertyRef Name="roleid" />
+            <PropertyRef Name="subroleid" />
+          </Key>
+          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="subroleid" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SUBROLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="rolekey" Type="nvarchar" MaxLength="100" />
+          <Property Name="description" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="name" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="surname" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="email" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="150" Nullable="false" />
+          <Property Name="createdate" Type="datetime" />
+          <Property Name="activasyonkey" Type="nvarchar" MaxLength="150" />
+          <Property Name="activasyondate" Type="datetime" />
+          <Property Name="status" Type="bit" />
+        </EntityType>
+        <EntityType Name="USERROLE">
+          <Key>
+            <PropertyRef Name="userid" />
+            <PropertyRef Name="roleid" />
+          </Key>
+          <Property Name="userid" Type="int" Nullable="false" />
+          <Property Name="roleid" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ROLESUBROLE_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="1" />
+          <End Role="ROLESUBROLE" Type="Self.ROLESUBROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ROLESUBROLE">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ROLESUBROLE_SUBROLE">
+          <End Role="SUBROLE" Type="Self.SUBROLE" Multiplicity="1" />
+          <End Role="ROLESUBROLE" Type="Self.ROLESUBROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SUBROLE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="ROLESUBROLE">
+              <PropertyRef Name="subroleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_ROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="1" />
+          <End Role="USERROLE" Type="Self.USERROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ROLE">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USERROLE">
+              <PropertyRef Name="roleid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_USERROLE_USER">
+          <End Role="USER" Type="Self.USER" Multiplicity="1" />
+          <End Role="USERROLE" Type="Self.USERROLE" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USER">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="USERROLE">
+              <PropertyRef Name="userid" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="USER_SQLModelStoreContainer">
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ROLESUBROLE" EntityType="Self.ROLESUBROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SUBROLE" EntityType="Self.SUBROLE" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USER" EntityType="Self.USER" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="USERROLE" EntityType="Self.USERROLE" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ROLESUBROLE_ROLE" Association="Self.FK_ROLESUBROLE_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="ROLESUBROLE" EntitySet="ROLESUBROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ROLESUBROLE_SUBROLE" Association="Self.FK_ROLESUBROLE_SUBROLE">
+            <End Role="SUBROLE" EntitySet="SUBROLE" />
+            <End Role="ROLESUBROLE" EntitySet="ROLESUBROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_ROLE" Association="Self.FK_USERROLE_ROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="USERROLE" EntitySet="USERROLE" />
+          </AssociationSet>
+          <AssociationSet Name="FK_USERROLE_USER" Association="Self.FK_USERROLE_USER">
+            <End Role="USER" EntitySet="USER" />
+            <End Role="USERROLE" EntitySet="USERROLE" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="USER_SQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ROLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="SUBROLE" Relationship="Self.ROLESUBROLE" FromRole="ROLE" ToRole="SUBROLE" />
+          <NavigationProperty Name="USER" Relationship="Self.USERROLE" FromRole="ROLE" ToRole="USER" />
+        </EntityType>
+        <EntityType Name="SUBROLE">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="rolekey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ROLE" Relationship="Self.ROLESUBROLE" FromRole="SUBROLE" ToRole="ROLE" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="USER">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="createdate" Type="DateTime" Precision="3" />
+          <Property Name="activasyonkey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="activasyondate" Type="DateTime" Precision="3" />
+          <Property Name="status" Type="Boolean" />
+          <NavigationProperty Name="ROLE" Relationship="Self.USERROLE" FromRole="USER" ToRole="ROLE" />
+        </EntityType>
+        <Association Name="ROLESUBROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="*" />
+          <End Role="SUBROLE" Type="Self.SUBROLE" Multiplicity="*" />
+        </Association>
+        <Association Name="USERROLE">
+          <End Role="ROLE" Type="Self.ROLE" Multiplicity="*" />
+          <End Role="USER" Type="Self.USER" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="USER_SQLEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ROLE" EntityType="Self.ROLE" />
+          <EntitySet Name="SUBROLE" EntityType="Self.SUBROLE" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="USER" EntityType="Self.USER" />
+          <AssociationSet Name="ROLESUBROLE" Association="Self.ROLESUBROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="SUBROLE" EntitySet="SUBROLE" />
+          </AssociationSet>
+          <AssociationSet Name="USERROLE" Association="Self.USERROLE">
+            <End Role="ROLE" EntitySet="ROLE" />
+            <End Role="USER" EntitySet="USER" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="USER_SQLModelStoreContainer" CdmEntityContainer="USER_SQLEntities">
+          <EntitySetMapping Name="ROLE">
+            <EntityTypeMapping TypeName="USER_SQLModel.ROLE">
+              <MappingFragment StoreEntitySet="ROLE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SUBROLE">
+            <EntityTypeMapping TypeName="USER_SQLModel.SUBROLE">
+              <MappingFragment StoreEntitySet="SUBROLE">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="rolekey" ColumnName="rolekey" />
+                <ScalarProperty Name="description" ColumnName="description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="USER_SQLModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USER">
+            <EntityTypeMapping TypeName="USER_SQLModel.USER">
+              <MappingFragment StoreEntitySet="USER">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="surname" ColumnName="surname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="password" ColumnName="password" />
+                <ScalarProperty Name="createdate" ColumnName="createdate" />
+                <ScalarProperty Name="activasyonkey" ColumnName="activasyonkey" />
+                <ScalarProperty Name="activasyondate" ColumnName="activasyondate" />
+                <ScalarProperty Name="status" ColumnName="status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ROLESUBROLE" TypeName="USER_SQLModel.ROLESUBROLE" StoreEntitySet="ROLESUBROLE">
+            <EndProperty Name="ROLE">
+              <ScalarProperty Name="id" ColumnName="roleid" />
+            </EndProperty>
+            <EndProperty Name="SUBROLE">
+              <ScalarProperty Name="id" ColumnName="subroleid" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="USERROLE" TypeName="USER_SQLModel.USERROLE" StoreEntitySet="USERROLE">
+            <EndProperty Name="ROLE">
+              <ScalarProperty Name="id" ColumnName="roleid" />
+            </EndProperty>
+            <EndProperty Name="USER">
+              <ScalarProperty Name="id" ColumnName="userid" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,56 @@
+﻿@model CompanyWeb.Entity.Model.Contact
+@using CompanyWeb.Web.Resources.Contact
+@using CompanyWeb.Web.Resources
+<section class="contact-us" id="contact">
+    <div class="container">
+        <div class="section-header">
+
+            <h2 class="white-text">@MainResource.contact </h2>
+            <div class="white-text section-legend"></div>
+        </div>
+        <div class="row">
+            <div class="pirate_forms_wrap">
+                <form id="pirate_forms_3807" class="pirate_forms ">
+                    <div class="col-sm-4 col-lg-4 form_field_wrap contact_name_wrap pirate_forms_three_inputs  ">
+                        <label for="pirate-forms-contact-name"></label>
+                        <input id="pirate-forms-contact-name" name="NameSurName" required class="form-control" type="text" value="" placeholder="@ContactResource.NameSurname">
+                    </div>
+                    <div class="col-sm-4 col-lg-4 form_field_wrap contact_email_wrap pirate_forms_three_inputs  ">
+                        <label for="pirate-forms-contact-email"></label>
+                        <input id="pirate-forms-contact-email" name="Email" required class="form-control" type="email" value="" placeholder="@ContactResource.EMail">
+                    </div>
+                    <div class="col-sm-4 col-lg-4 form_field_wrap contact_subject_wrap pirate_forms_three_inputs  ">
+                        <label for="pirate-forms-contact-subject"></label>
+                        <input id="pirate-forms-contact-subject" name="Subject" required class="form-control" type="text" value="" placeholder="@ContactResource.Subject">
+                    </div>
+                    <div class="col-sm-12 col-lg-12 form_field_wrap contact_message_wrap  ">
+                        <textarea id="pirate-forms-contact-message" name="message" required class="form-control" placeholder="@ContactResource.Message"></textarea>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-lg-6 form_field_wrap contact_submit_wrap">
+                        <button id="pirate-forms-contact-submit" name="pirate-forms-contact-submit" class="pirate-forms-submit-button" type="submit">@ContactResource.Send</button>
+                    </div>
+                   
+                </form>
+                <div class="pirate_forms_clearfix"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    $("button#pirate-forms-contact-submit").on("click", function () {
+        var model = $("form#pirate_forms_3807").serialize();
+
+            $.ajax({
+                url: '@Url.Action("SendMail","Home")',
+                data: model,
+                //processData: false,
+                //contentType: false,
+                type: 'POST',
+                success: function (data) {
+                    alert("data");
+                    $("#durum").text(data);
+
+                }
+            });
+        });
+</script>

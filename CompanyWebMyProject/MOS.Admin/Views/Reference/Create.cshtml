@@ -1,0 +1,103 @@
+﻿@model CompanyWeb.Admin.Models.ReferenceViewModel
+@using CompanyWeb.Admin.Resources.Reference
+@{
+    ViewBag.Title = ReferenceResource.CreateReference;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section styles{
+    <link href="@Url.Content("~/Content/vendors/cropper/dist/cropper.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/vendors/cropper/dist/crop_avatar.css")" rel="stylesheet" />
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+}
+
+
+@using (Html.BeginForm("Create", "Reference", FormMethod.Post, new { @class = "avatar-form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>@ReferenceResource.CreateReference</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ImageUrl">@ReferenceResource.ImageUrl</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ImageURL, new { htmlAttributes = new { @class = "form-control", type = "file" } })
+                @Html.ValidationMessageFor(model => model.ImageURL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LogoName">@ReferenceResource.LogoName</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LogoName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LogoName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Testimonial">@ReferenceResource.Testimonial</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Testimonial, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Testimonial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="WebUrl">@ReferenceResource.WebUrl</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.WebURL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.WebURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+         <div class="form-group">
+            <label class="control-label col-md-2" for="IsActive">@ReferenceResource.IsActive</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IsTestimonial">@ReferenceResource.IsTestimonial</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsTestimonial, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsTestimonial, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="RowNumber">@ReferenceResource.RowNumber</label>
+            <div class="col-md-10">
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.RowNumber, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.RowNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink(ReferenceResource.BackToList, "Index", null, new { @class = "btn btn-primary" })
+                <input type="submit" value="@ReferenceResource.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+
+@Scripts.Render("~/Content/ckeditor/ckeditor.js")
+
+<script type="text/javascript">
+    var editor = CKEDITOR.instances['Testimonial'];
+        if (editor) { editor.destroy(true); }
+        CKEDITOR.replace('Testimonial', {
+            enterMode: CKEDITOR.ENTER_BR,
+        });
+</script>

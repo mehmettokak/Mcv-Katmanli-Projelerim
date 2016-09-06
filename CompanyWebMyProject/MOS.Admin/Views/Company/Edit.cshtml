@@ -1,0 +1,102 @@
+﻿@model CompanyWeb.Admin.Models.CompanyViewModel
+@using CompanyWeb.Admin.Resources.Company
+@{
+    ViewBag.Title = CompanyResource.Edit;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Company", FormMethod.Post, new { @class = "avatar-form", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>@CompanyResource.EditCompany</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Adress">@CompanyResource.Adress</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Adress, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Adress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+       
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Email">@CompanyResource.Email</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.EMail, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMail, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Copyright">@CompanyResource.Copyright</label>
+            <div class="col-md-10">
+                  @Html.EditorFor(model => model.Copyright, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Copyright, "", new { @class = "text-danger" })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Phone1">@CompanyResource.Phone1</label>
+            <div class="col-md-10">
+             
+                    @Html.EditorFor(model => model.Phone1, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone1, "", new { @class = "text-danger" })
+              
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Phone2">@CompanyResource.Phone2</label>
+            <div class="col-md-10">
+             
+                    @Html.EditorFor(model => model.Phone2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone2, "", new { @class = "text-danger" })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Phone3">@CompanyResource.Phone3</label>
+            <div class="col-md-10">
+              
+                    @Html.EditorFor(model => model.Phone3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Phone3, "", new { @class = "text-danger" })
+             
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Facebook">@CompanyResource.Facebook</label>
+            <div class="col-md-10">
+               
+                    @Html.EditorFor(model => model.FacebookUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.FacebookUrl, "", new { @class = "text-danger" })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Twitter">@CompanyResource.Twitter</label>
+            <div class="col-md-10">
+               
+                    @Html.EditorFor(model => model.TwitterUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.TwitterUrl, "", new { @class = "text-danger" })
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Linkedin">@CompanyResource.Linkedin</label>
+            <div class="col-md-10">
+              
+                    @Html.EditorFor(model => model.LinkedinUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.LinkedinUrl, "", new { @class = "text-danger" })
+              
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink(CompanyResource.BackTo, "Index", null, new { @class = "btn btn btn-primary" })
+                <input type="submit" value="@CompanyResource.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+

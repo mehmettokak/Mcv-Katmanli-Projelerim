@@ -1,0 +1,81 @@
+﻿@using CompanyWeb.Entity.Model
+@using CompanyWeb.Web.Models
+@using System.Data.Entity;
+@using CompanyWeb.BAL.Provider;
+@{     
+    #region CompanyViewModel 
+    DbProvider<Company> _dbCompanyModel = new DbProvider<Company>();
+    DbProvider<Category> _dbCategoryModel = new DbProvider<Category>();
+    Company dbCompanyModel =  _dbCompanyModel.GetAll().Include(x => x.CompanyLangs).FirstOrDefault();
+    int LangId = Helper.LangId;
+
+    CompanyLang dbCompanyLangModel = dbCompanyModel.CompanyLangs.FirstOrDefault(x => x.LanguageId == LangId);
+    CompanyViewModel Model = null;
+    if (dbCompanyLangModel!= null)
+    {
+        Model = new CompanyViewModel()
+        {
+            Id = dbCompanyModel.Id,
+            Adress = dbCompanyLangModel.Adress,
+            Copyright = dbCompanyLangModel.Copyright,
+            EMail = dbCompanyModel.EMail,
+            Phone1 = dbCompanyModel.Phone1,
+            Phone2 = dbCompanyModel.Phone2,
+            Fax = dbCompanyModel.Fax,
+            FacebookUrl = dbCompanyModel.FacebookUrl,
+            TwitterUrl = dbCompanyModel.TwitterUrl,
+            LinkedinUrl = dbCompanyModel.LinkedinUrl
+        };
+    }
+    #endregion
+
+   var dbCategoryModel = _dbCategoryModel.GetAll(x=>x.IsMenuActive);
+
+}
+
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <!--[if IE]><![endif]-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+   
+    <!--[if lt IE 9]> <script src="/Content/lite/js/html5.js" ></script> <link rel="stylesheet" href="/Content/lite/css/ie.css" type="text/css"> <![endif]-->
+    <title>Mehmet TOKAK</title>
+    
+
+    @Styles.Render("~/Css")
+  
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  
+   
+
+</head>
+<body>
+    <div id="mobilebgfix">
+        <div class="mobile-bg-fix-img-wrap">
+            <div class="mobile-bg-fix-img"></div>
+        </div>
+        <div class="mobile-bg-fix-whole-site">
+            <header id="home" class="header" itemscope="itemscope" >
+                @Html.Partial("Partials/_header/_navbar", dbCategoryModel)
+            </header>
+            @RenderSection("header", false)
+            @RenderBody()
+            <footer id="footer" itemscope="itemscope" >
+                <div class="container">
+
+                    @Html.Partial("Partials/_footer/_companydetails",Model);
+
+
+                </div>
+            </footer>
+
+        </div>
+    </div>
+    @Scripts.Render("~/JavaScript")
+
+</body>
+</html>

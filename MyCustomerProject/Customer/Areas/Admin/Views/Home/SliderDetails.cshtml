@@ -1,0 +1,100 @@
+﻿@model Customer.Models.Classes.SliderModel
+
+@{
+    ViewBag.Title = "SliderDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Slider";
+    TempData["page1"] = "SliderDetails";
+     
+  
+}
+
+
+@Html.Partial("Partials/_pageBar")
+<div class="profile">
+    <div class="tabbable-line tabbable-full-width">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab_1_3" data-toggle="tab"> Overview </a>
+            </li>
+          
+        </ul>
+        <div class="tab-content">
+
+         
+
+               
+           
+@using (Html.BeginForm("SetSliderDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off" }))
+                    {
+            <div class="tab-pane" id="tab_1_3">
+                <div class="row profile-account">
+                    <div class="col-md-3">
+                        <ul class="ver-inline-menu tabbable margin-bottom-10">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab_1-1">
+                                    <i class="fa fa-cog"></i> Account Info
+                                </a>
+
+                                <span class="after"> </span>
+                            </li>
+                          
+                        </ul>
+                     
+                        <div class="fileinput fileinput-new" data-provides="fileinput">
+                            <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                <img src="@Model.filePath" alt="@Model.filePath" />
+                                @Html.HiddenFor(model => Model.filePath)
+                            </div>
+                            <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                            <div>
+                                <span class="btn default btn-file">
+                                    <span class="fileinput-new"> Select image </span>
+                                    <span class="fileinput-exists"> Change </span>
+                                   <input type="file" name="file"/>
+                                </span>
+                                <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                            </div>
+                        </div>
+                    </div>
+                  
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "Aşağıdaki sorunlar oluştu!")
+                        @Html.HiddenFor(model => Model.id)
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                                <div id="tab_1-1" class="tab-pane active">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.imageDescription)
+                                        @Html.TextAreaFor(model => model.imageDescription, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.imageDescription)
+                                    </div>
+                                  
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.imageStatus)
+                                        @Html.CheckBoxFor(model => model.imageStatus, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.imageStatus)
+                                    </div>
+                                    <div class="margiv-top-10">
+                                        <button type="submit" class="btn green"> Kaydet</button>
+                                        <a href="javascript:;" class="btn default"> Vazgeç </a>
+                                    </div>
+
+                                </div>
+                          
+
+                            </div>
+                        </div>
+                  
+
+                    <!--end col-md-9-->
+                </div>
+            </div>
+                    }
+        </div>
+    </div>
+</div>
+

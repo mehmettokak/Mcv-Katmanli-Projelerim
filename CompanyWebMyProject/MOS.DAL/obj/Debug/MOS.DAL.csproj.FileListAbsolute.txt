@@ -1,0 +1,28 @@
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.dll.config
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\EntityFramework.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\MOS.Entity.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\EntityFramework.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.Migrations.addkk12.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.csproj.GenerateResource.Cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.dll.config
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\MOS.DAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\EntityFramework.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\EntityFramework.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.csprojResolveAssemblyReference.cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.Migrations.addkk12.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.csproj.GenerateResource.Cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.DAL\obj\Debug\MOS.DAL.pdb

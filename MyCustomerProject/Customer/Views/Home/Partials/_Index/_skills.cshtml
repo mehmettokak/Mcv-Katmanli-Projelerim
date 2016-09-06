@@ -1,0 +1,26 @@
+﻿@{
+    var model = new Customer.Models.LayoutViewModel();
+
+    var _wp = new Customer.BAL.Providers.IndexProvider.SkillsProvider();
+    model.SkillsListModel = _wp.GetWorksListModel();
+}
+
+<section id="fh5co-features">
+    <center> <h2>Yeteneklerimiz</h2></center>
+    <div class="container">
+        <div class="row">
+            @foreach (var item in model.SkillsListModel)
+            {
+                <div class="col-md-4 col-sm-6 col-xs-12 animate-box">
+                    <div class="fh5co-feature">
+                        <div class="fh5co-icon">
+                            <i class="icon-@item.IconName"></i>
+                        </div>
+                        <h3>@Helper.TextLength(item.Title,10)</h3>
+                        <p>@Helper.TextLength(item.Description,40)</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

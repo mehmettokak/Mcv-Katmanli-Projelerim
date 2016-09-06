@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="USER_SQLModelStoreContainer" CdmEntityContainer="USER_SQLEntities">
+    <EntitySetMapping Name="ROLE">
+      <EntityTypeMapping TypeName="USER_SQLModel.ROLE">
+        <MappingFragment StoreEntitySet="ROLE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SUBROLE">
+      <EntityTypeMapping TypeName="USER_SQLModel.SUBROLE">
+        <MappingFragment StoreEntitySet="SUBROLE">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="rolekey" ColumnName="rolekey" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="USER_SQLModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER">
+      <EntityTypeMapping TypeName="USER_SQLModel.USER">
+        <MappingFragment StoreEntitySet="USER">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="surname" ColumnName="surname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="createdate" ColumnName="createdate" />
+          <ScalarProperty Name="activasyonkey" ColumnName="activasyonkey" />
+          <ScalarProperty Name="activasyondate" ColumnName="activasyondate" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ROLESUBROLE" TypeName="USER_SQLModel.ROLESUBROLE" StoreEntitySet="ROLESUBROLE">
+      <EndProperty Name="ROLE">
+        <ScalarProperty Name="id" ColumnName="roleid" />
+      </EndProperty>
+      <EndProperty Name="SUBROLE">
+        <ScalarProperty Name="id" ColumnName="subroleid" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="USERROLE" TypeName="USER_SQLModel.USERROLE" StoreEntitySet="USERROLE">
+      <EndProperty Name="ROLE">
+        <ScalarProperty Name="id" ColumnName="roleid" />
+      </EndProperty>
+      <EndProperty Name="USER">
+        <ScalarProperty Name="id" ColumnName="userid" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

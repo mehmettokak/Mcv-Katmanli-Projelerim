@@ -1,0 +1,46 @@
+﻿@model IEnumerable<CompanyWeb.Entity.Model.User>
+@using CompanyWeb.Admin.Resources.User
+
+@{
+    ViewBag.Title = UserResource.UserList;
+}
+
+<p>
+    @Html.ActionLink(UserResource.CreateUser, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @UserResource.FirstNameAndLastName
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @UserResource.IsActive
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink(UserResource.Edit, "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                @Html.ActionLink(UserResource.Detail, "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                @Html.ActionLink(UserResource.Delete, "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
+
+</table>

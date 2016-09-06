@@ -1,0 +1,55 @@
+﻿@model CompanyWeb.Admin.Models.SliderViewModel
+@using CompanyWeb.Admin.Resources.Slider
+@{
+    ViewBag.Title = SliderResource.Edit;
+}
+
+@using (Html.BeginForm("Edit", "Slider", FormMethod.Post, new { @class = "avatar-form", enctype = "multipart/form-data", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>@SliderResource.EditSlider</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Title">@SliderResource.Title</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ImageUrl">@SliderResource.Image</label>
+            <div class="col-md-10">
+                <input type="file" id="ImageUrl" name="ImageUrl" class="form-control"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="RowNumber">@SliderResource.RowNumber</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RowNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RowNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IsActive">@SliderResource.IsActive</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink(SliderResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+                <input type="submit" value="@SliderResource.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}

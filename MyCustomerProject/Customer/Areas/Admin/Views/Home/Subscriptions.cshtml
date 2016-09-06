@@ -1,0 +1,81 @@
+﻿@model List<Customer.Models.Classes.NewsLetterModel>
+@{
+    ViewBag.Title = "Subscriptions";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    int i = 0;
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Subscriptions";
+}
+
+
+
+
+<div class="portlet box red">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>List Subcriptions   <small id="err">@TempData["err"]</small>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+
+           
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr role="row" class="heading">
+                            <th width="5%">No</th>
+                             <th width="40%"> Email</th>
+                            <th width="20%"> Tarih </th>
+                            <th width="20%">Ayarlar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        @foreach (var item in Model)
+                        {
+                            i++;
+                            <tr>
+                                <td>
+
+                                    <strong>@i</strong>
+
+                                </td>
+                                <td>
+
+                                    <strong>@item.Email</strong>
+
+                                </td>
+                                <td>
+                                  <label>@item.CreateTime</label>
+                                </td>
+
+                                <td>
+
+                                    <button href="" class="btn btn-default btn-sm"><i class="fa fa-times"></i>Update</button>
+                                    <a href="@Url.Action("RemoveSubscriptions", "Home", new { @id = item.Id })" class="btn btn-default btn-sm"><i class="fa fa-times"></i> Remove</a>
+
+                                </td>
+                            </tr>
+                        }
+
+
+
+
+                    </tbody>
+                </table>
+            
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

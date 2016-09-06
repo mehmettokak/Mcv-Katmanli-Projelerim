@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Employees";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Employees";
+}
+
+@model List<Customer.Models.Classes.EmployeesModel>
+
+@Html.Partial("Partials/_pageBar")
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class=" icon-layers font-green"></i>
+                    <span class="caption-subject font-green bold uppercase"><a href="@Url.Action("EmployeesDetails", "Home")" title="Ekle">Add Employees @TempData["err"]</a></span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="mt-element-card mt-element-overlay">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="mt-card-item">
+                                    <div class="mt-card-avatar mt-overlay-1">
+                                        <img src="@item.Image" style=" width:234px; height:234px;"/>
+                                        <div class="mt-overlay">
+                                            <ul class="mt-info">
+                                                <li>
+                                                    <a class="btn default btn-outline" href="@Url.Action("EmployeesDetails", "Home", new { @id = item.Id })" title="Güncelle">
+                                                        <i class="icon-magnifier"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="btn default btn-outline" href="@Url.Action("RemoveEmployees", "Home", new { @id = item.Id })" title="Sil" onclick="return checkConfirm();">
+                                                        <i class=" icon-link">
+                                                        </i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+                                    <div class="mt-card-content">
+                                          <h3 class="mt-card-name"><strong>@item.Order ) </strong>@item.Name @item.SurName <small><input type="checkbox" value="@item.Status" @(item.Status==true ?"checked=checked" :null)  disabled="disabled" /></small> </h3><br /><small>@item.Email</small>
+                                        <p class="mt-card-desc font-grey-mint">@Helper.TextLength(item.Title,15)</p>
+                                        <p class="mt-card-desc font-grey-mint">@item.Telephone</p>
+                                        <div class="mt-card-social">
+                                            <ul>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-social-facebook" title="@item.Facebook"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-social-twitter" title="@item.Twitter"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a href="javascript:;">
+                                                        <i class="icon-social-youtube"></i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+        function checkConfirm() {
+            if (confirm('Kullanıcı bilgileri sistemden silinsin mi?')) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+</script>
+
+

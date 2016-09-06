@@ -1,0 +1,83 @@
+﻿@model CompanyWeb.Admin.Models.ReferenceViewModel
+@using CompanyWeb.Admin.Resources.Reference
+@{
+    ViewBag.Title = ReferenceResource.Edit;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Edit", "Reference", FormMethod.Post, new { @class = "avatar-form", enctype = "multipart/form-data", autocomplete = "off" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>@ReferenceResource.EditReference</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LogoName">@ReferenceResource.LogoName</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LogoName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.LogoName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+       
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ImageUrl">@ReferenceResource.ImageUrl</label>
+            <div class="col-md-10" >
+                
+                <input type="file" id="ImageUrl" name="ImageUrl" class="form-control"/>
+               
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Testimonial">@ReferenceResource.Testimonial</label>
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Testimonial, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Testimonial, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="WebUrl">@ReferenceResource.WebUrl</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.WebURL, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.WebURL, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="RowNumber">@ReferenceResource.RowNumber</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.RowNumber, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.RowNumber, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IsActive">@ReferenceResource.IsActive</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IsTestimonial">@ReferenceResource.IsTestimonial</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsTestimonial, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsTestimonial, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink(ReferenceResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+                <input type="submit" value="@ReferenceResource.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+

@@ -1,0 +1,71 @@
+﻿body{
+	
+	font-size:14px;
+	font:14px Arial, Helvetica, sans-serif;
+	 }
+	 
+a{ 
+text-decoration:none;
+}
+
+ul,li{
+	padding:0;
+	 margin:0;
+	 list-style:none;
+	}
+#sliderarka {
+	background-color: #CCC;
+    width: 1220px;
+	height: 520px;
+	
+	margin-left: 60px;
+	margin-top: -9px;
+	padding-top: 10px;
+}
+	
+#slider{
+	background-color: #000;
+	overflow: hidden;
+width: 1200px;
+	height: 500px;
+	position: relative;
+	margin-top: 0px;
+	margin-right: auto;
+	margin-bottom: 0px;
+	margin-left: auto;
+}
+
+#slider ul#resim li a img{ 
+width:700px; 
+height:250px;
+}
+
+#slider ul#buton {
+	position: absolute;
+	left: 10px;
+	bottom: 0px;
+}
+
+#slider ul#buton li { 
+float:left;
+}
+#slider ul#buton li a{
+	padding:6px; 
+	margin-right:5px; 
+	background:#CCC; 
+	display:block; 
+	color:#FFF;
+	}
+	
+#slider ul#buton li.aktif a{ 
+background:#F00;
+}
+#slider ul#resim li p{ margin-left:100px;margin-top:0px;z-index:10000;}
+#altgolge {
+	width: 1220px;
+	margin-right: auto;
+	margin-left: 60px;
+	height: 8px;
+	background-image: url(/Content/images/slider/altgolge.jpg);
+	background-repeat: no-repeat;
+}

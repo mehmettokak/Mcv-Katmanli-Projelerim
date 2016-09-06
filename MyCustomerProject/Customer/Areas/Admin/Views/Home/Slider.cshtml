@@ -1,0 +1,118 @@
+﻿@model  List<Customer.Models.Classes.SliderModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+  
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Slider";
+  
+   
+}
+
+
+@Html.Partial("Partials/_pageBar")
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> Slider @TempData["err"]</span>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+                               
+                                <a href=@Url.Action("SliderDetails", "Home")  id="sample_editable_1_new" class="btn sbold green">
+                                    Add New
+                                    <i class="fa fa-plus"></i>
+
+                                </a>
+                               
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                @using (Html.BeginForm("SetSliderDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "login-form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.ValidationSummary(true, "Aşağıdaki sorunlar oluştu!")
+                   
+                    <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                        <thead>
+                            <tr>
+                                <th>
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
+                                        <span></span>
+                                    </label>
+                                </th>
+
+                                <th>Resim </th>
+                                <th> Açıklama  </th>
+                                <th> Durum  </th>
+                                <th>Ayarlar</th>
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                           @foreach (var item in Model)
+                           {
+                               
+                          
+                            <tr class="odd gradeX">
+                                <td>
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="checkboxes" value="1" />
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    @{
+                               if (item.filePath.Contains("image"))
+                               {
+                                <img src="@item.filePath" style="width:50px;height:30px;">
+                               }
+                               else
+                               {
+                                <video width="50" height="30" autoplay><source src="@item.filePath" type="video/mp4"></video>
+                               }
+}
+                                   
+                                       
+                                   
+                                </td>
+                                <td>
+                                  
+                                    <div class="form-group">
+                                   @item.imageDescription
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="label label-sm label-@(item.imageStatus == true ? "success" : "danger")"> @item.imageStatus </span>
+                                </td>
+
+                                <td>
+                                    <a href="/Admin/Home/SliderDetails/@item.id" class="btn btn-outline btn-circle btn-sm dark black">
+                                        <i class="fa fa-plus"></i> Detay
+                                    </a>
+                                    <a href="/Admin/Home/RemoveSlider/@item.id" class="btn btn-outline btn-circle btn-sm dark black">
+                                        <i class="fa fa-plus"></i> Sil
+                                    </a>
+                                </td>
+                            </tr>
+                           }
+                                </tbody>
+                    </table>
+                }
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>

@@ -1,0 +1,46 @@
+﻿@model List<CompanyWeb.Web.Models.EmployeeViewModel>
+@using CompanyWeb.Web.Resources
+<section class="our-team" id="team">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="dark-text">@MainResource.consultants</h2>
+            <div class="section-legend"></div>
+        </div>
+        <div class="row" data-scrollreveal="enter left after 0s over 0.1s">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-sm-3 team-box">
+                    <div class="team-member">
+                        <figure class="profile-pic">
+                            <img src="@item.AvatarURL" alt="@item.FirstName @item.LastName" />
+                        </figure>
+                        <div class="member-details">
+                            <a href="@Url.Action("Index","Employee",new { id=item.ID})">  <h3 class="dark-text red-border-bottom">@item.FirstName @item.LastName</h3></a>
+                            <div class="position"> <ul><li>@item.Title</li></ul> </div>
+                        </div>
+                        <div class="social-icons">
+                            <ul>
+                                @foreach (var social in item.SocialLinks)
+                                {
+                                    <li>
+                                        <a href="@social.LinkURL" target="_self">
+                                            <i class="@social.IconURL"></i>
+                                        </a>
+                                    </li>
+                                }
+
+                            </ul>
+                        </div>
+                        <a href="@Url.Action("Index","Employee",new { id=item.ID})">
+                            <div class="details">
+                                @item.Description
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            }
+
+
+        </div>
+    </div>
+</section>

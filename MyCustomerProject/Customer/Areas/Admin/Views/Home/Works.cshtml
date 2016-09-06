@@ -1,0 +1,13 @@
+﻿@model Customer.Areas.Admin.Models.AdminHomeViewModel
+@{
+    ViewBag.Title = "Works";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Works";
+}
+
+@{
+    Html.RenderPartial("Partials/_pageBar");
+    Html.RenderPartial("Partials/Content/_listWorksTable", Model.adminWorksListModel);
+}
+

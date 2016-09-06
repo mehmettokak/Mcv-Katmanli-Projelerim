@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Maps";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIEk9V2uKkQa43U_rLlAIaSIPKRHFcnOM&callback=initMap"></script>
+<script src="~/Content/map/js/jquery-1.4.2.min.js"></script>
+<script src="~/Content/map/js/jquery-ui-1.8.1.custom.min.js"></script>
+<script src="~/Content/map/js/main.js"></script>
+<form id="form1" >
+    <label>Adres:</label>
+    <input type="text" id="address" style="width:300px;" /><br /><br /><br />
+    <label>Açıklama:</label>
+    <input type="text" id="aciklama" textmode="MultiLine"  style="height:55px;width:300px;"/>
+   
+    <br /><br />
+
+    <div id="map_canvas" style="width:500px;height:350px;"></div>
+
+    <label>x</label>
+    <input type="text" id="latitude" />
+    <label>y</label>
+    <input type="text" id="longitude" />
+
+    <button id="Button1"> Ekle</button>
+
+
+
+</form>
+

@@ -1,0 +1,55 @@
+﻿@model CompanyWeb.Entity.Model.Language
+@using CompanyWeb.Admin.Resources.Language
+@{
+    ViewBag.Title = LanguageResource.Delete;
+}
+
+<div>
+    <h4>@LanguageResource.LanguageDeleteProcess</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @LanguageResource.Detail
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @LanguageResource.Code
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+        <dt>
+            @LanguageResource.IsActive
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+        <dt>
+            @LanguageResource.IconUrl
+        </dt>
+
+        <dd>
+            @{
+                if (!string.IsNullOrEmpty(Model.IconURL))
+                {
+                    <text><img src="@Model.IconURL" alt="" style="max-height:34px" /></text>
+                }
+            }
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-2 col-md-10">
+            @Html.ActionLink(LanguageResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+            <input type="submit" value="@LanguageResource.Delete" class="btn btn-danger" />
+        </div>
+    }
+</div>

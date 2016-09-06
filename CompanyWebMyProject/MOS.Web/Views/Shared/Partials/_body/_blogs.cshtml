@@ -1,0 +1,37 @@
+﻿@model List<CompanyWeb.Web.Models.BlogViewModel>
+@using CompanyWeb.Web.Resources
+<section class="latest-news" id="latestnews">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="dark-text">@MainResource.news</h2>
+            <div class="dark-text section-legend"></div>
+        </div>
+        <div class="clear"></div>
+        <div id="carousel-homepage-latestnews" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    @foreach (var item in Model)
+                    {
+                        <div class="col-sm-3 latestnews-box">
+                            <div class="latestnews-img">
+                                <a class="latestnews-img-a" href="@Url.Action("Index","Blog",new { id=item.Id})" title="@item.Name">
+                                    <img width="250" height="250" src="@item.IconUrl" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="@item.Name" />
+
+                                </a>
+                            </div>
+                            <div class="latesnews-content">
+                                <h3 class="latestnews-title"><a href="@Url.Action("Index","Blog",new { id=item.Id})" title="@item.Name">@item.Name</a></h3>
+                                <p>@item.Description</p>
+                            </div>
+                        </div>
+                    }
+
+
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-homepage-latestnews" role="button" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span> <span class="sr-only">Sonraki</span> </a>
+            <a class="right carousel-control" href="#carousel-homepage-latestnews" role="button" data-slide="next"> <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span> <span class="sr-only">Önceki</span> </a>
+        </div>
+    </div>
+</section>

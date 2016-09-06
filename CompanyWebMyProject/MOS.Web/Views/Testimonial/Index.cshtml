@@ -1,0 +1,28 @@
+﻿@model List<CompanyWeb.Web.Models.ReferenceViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+    <div id="test">
+        @foreach (var item in Model)
+        {
+            <div id="block">
+                <h3>@item.LogoName</h3>
+                <div class="photo">
+                    <img src="/Content/testimonial/img/photo-bg.png" alt="" class="photo-bg" />
+                    <img src="@item.ImageURL" alt="@item.LogoName" class="photo" />
+                </div>
+                <p class="content"><span class="laquo">&nbsp;</span>@item.Testimonial<span class="raquo">&nbsp;</span></p>
+                <div class="sign">
+                    <a href="@item.WebURL">@item.LogoName</a>
+                    <p></p>
+                </div>
+            </div>
+        }
+     
+
+    </div>
+   
+

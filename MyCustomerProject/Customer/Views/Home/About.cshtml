@@ -1,0 +1,14 @@
+﻿@model Customer.Models.AboutViewModel
+@Html.Partial("Partials/_Index/_Header/_slider", Model.AboutSliderModel);
+<section id="fh5co-projects">
+    <div class="container">
+        <div class="row row-bottom-padded-md">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h2 class="fh5co-lead animate-box"></h2>
+                <p class="fh5co-sub-lead animate-box">@Model.AboutContentModel.Description </p>
+            </div>
+        </div>
+        </div>
+  
+    @Html.Partial("Partials/_Index/_employees")
+    </section>

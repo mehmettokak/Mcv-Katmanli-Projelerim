@@ -1,0 +1,132 @@
+﻿@model Customer.Models.Classes.SkillsModel
+@{
+    ViewBag.Title = "SkillsDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Skills";
+    TempData["page1"] = "SkillsDetails";
+     
+}
+@Html.Partial("Partials/_pageBar")
+<div class="profile">
+    <div class="tabbable-line tabbable-full-width">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab_1_1" data-toggle="tab"> Overview </a>
+            </li>
+            <li>
+                <a href="#tab_1_3" data-toggle="tab"> Account </a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="tab_1_1">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="fh5co-icon">
+                            <i class="icon-@Model.IconName"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-8 profile-info">
+                                <h1 class="font-green sbold uppercase">@Model.Title</h1>
+                                <p>
+                                    @Model.Description
+                                </p>
+                                
+                                <ul class="list-inline">
+
+                                    <li>
+                                        <i class="fa fa-calendar"></i> Sıra No : @Model.Order
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-briefcase"></i> Durum : @Model.Status
+                                    </li>
+
+                                </ul>
+                            </div>
+                       
+                        </div>
+                        <!--end row-->
+                     
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab_1_3">
+                <div class="row profile-account">
+                    <div class="col-md-3">
+                        <ul class="ver-inline-menu tabbable margin-bottom-10">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab_1-1">
+                                    <i class="fa fa-cog"></i> Work Info
+                                </a>
+                                <span class="after"> </span>
+                            </li>
+                           
+                          
+                        </ul>
+
+
+                    </div>
+                    @using (Html.BeginForm("SetSkillsDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "Aşağıdaki sorunlar oluştu!")
+                        @Html.HiddenFor(model => Model.Id)
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                                <div id="tab_1-1" class="tab-pane active">
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Title)
+                                        @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Title)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Description)
+                                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Description)
+                                    </div>
+
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.IconName)
+                                        @Html.DropDownListFor(model => model.IconName, (SelectList)ViewData["ICON"])
+                                        @Html.ValidationMessageFor(model => model.IconName)
+                                    </div>
+                                  
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Order)
+                                        @Html.TextBoxFor(model => model.Order, new { @class = "form-control", @type = "number", @min = "1" })
+                                        @Html.ValidationMessageFor(model => model.Order)
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(model => model.Status)
+                                        @Html.CheckBoxFor(model => model.Status, new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(model => model.Status)
+                                    </div>
+                                    <div class="margiv-top-10">
+                                        <button type="submit" class="btn green"> Kaydet</button>
+                                        <a href="javascript:;" class="btn default"> Vazgeç </a>
+                                    </div>
+
+                                </div>
+                              
+
+                            </div>
+                        </div>
+                    }
+
+                    <!--end col-md-9-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+

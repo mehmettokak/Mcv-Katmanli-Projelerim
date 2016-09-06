@@ -1,0 +1,84 @@
+﻿@model List<CompanyWeb.Web.Models.ProductViewModel>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content" class="site-content">
+    <div class="container">
+        <div class="content-left-wrap col-md-9">
+            <div id="primary" class="content-area">
+                <main id="main" class="site-main">
+                   
+
+                       
+
+                        <article id="post-3807" class="post-3807 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+@foreach (var item in Model)
+{
+                            <header class="page-header">
+                                <a href="/Blog/Detail/@item.Id"> <h1 class="page-title">@item.Title</h1></a>
+                            </header>
+                            <div class="post-img-wrap">
+
+                                <img width="100" height="100" src="@item.ImageUrl" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="@item.Title" />
+
+                            </div>
+                            <div class="listpost-content-wrap">
+                                <div class="list-post-top">
+
+                                    <div class="entry-content">
+                                        <p>@item.Description</p>
+
+                                    </div>
+                                </div>
+                            </div>
+}
+                        </article>
+                        
+                  
+                        </main>
+                    
+                </div>
+            </div>
+
+            @*<div class="sidebar-wrap col-md-3 content-left-wrap">
+                    <div id="secondary" class="widget-area" role="complementary">
+                        <aside id="search-2" class="widget widget_search">
+                            <form role="search" method="get" class="search-form" action="#">
+                                <label>
+                                    <span class="screen-reader-text">Search for:</span>
+                                    <input type="search" class="search-field" placeholder="Search &hellip;" value="" name="s" />
+                                </label>
+                                <input type="submit" class="search-submit" value="Search" />
+                            </form>
+                        </aside>
+
+                        <aside id="recent-comments-2" class="widget widget_recent_comments">
+                            <h2 class="widget-title">Bizden Haberler</h2>
+                            <ul id="recentcomments"></ul>
+                        </aside>
+                        @foreach (var item in Model.Category)
+                        {
+                            <aside id="archives-2" class="widget widget_archive">
+                                <a href="/Home/BlogDetail/@item.Id"> <h2 class="widget-title">@item.Name</h2></a>
+                                <ul>
+                                    @foreach (var item1 in Model.SubCateories)
+                                    {
+                                        <li>
+                                            @item1.Title
+                                        </li>
+                                    }
+
+
+                                </ul>
+                            </aside>
+                        }
+
+
+
+                    </div>
+                </div>*@
+        </div>
+    </div>
+

@@ -1,0 +1,15 @@
+﻿@model List<Customer.Models.Classes.Footer.SocialModel>
+
+<div class="col-md-3 col-sm-6 col-xs-12 animate-box">
+    <div class="fh5co-footer-widget">
+        <h3>Follow Us</h3>
+        <ul class="fh5co-social">
+            @foreach (var item in Model.Where(x=>x.Status==true).OrderBy(x=>x.Order))
+            {
+                <li><a href="@item.SocialUrl"><i class="icon-@item.SocialName"></i></a></li>
+            }
+            
+          
+        </ul>
+    </div>
+</div>

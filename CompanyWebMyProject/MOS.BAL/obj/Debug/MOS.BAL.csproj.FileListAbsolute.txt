@@ -1,0 +1,32 @@
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.csprojResolveAssemblyReference.cache
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.dll.config
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\EntityFramework.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.DAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.Tool.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.DAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.Entity.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\MOS.Tool.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\EntityFramework.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.dll.config
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.BAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\EntityFramework.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.DAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.Tool.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.DAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\MOS.Tool.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\EntityFramework.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.csprojResolveAssemblyReference.cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.BAL\obj\Debug\MOS.BAL.pdb

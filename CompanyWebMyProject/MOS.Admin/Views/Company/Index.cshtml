@@ -1,0 +1,85 @@
+﻿@model CompanyWeb.Admin.Models.CompanyViewModel
+@using CompanyWeb.Admin.Resources.Company
+@{
+    ViewBag.Title = CompanyResource.Company;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div>
+    <h4>@CompanyResource.Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @CompanyResource.Adress
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Adress)
+        </dd>
+        <dt>
+            @CompanyResource.Email
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.EMail)
+        </dd>
+
+
+        <dt>
+            @CompanyResource.Copyright
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Copyright)
+        </dd>
+        <dt>
+            @CompanyResource.Phone1
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone1)
+        </dd>
+        <dt>
+            @CompanyResource.Phone2
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone2)
+        </dd>
+        <dt>
+            @CompanyResource.Phone3
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Phone3)
+        </dd>
+        <dt>
+            @CompanyResource.Facebook
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FacebookUrl)
+        </dd>
+        <dt>
+            @CompanyResource.Twitter
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TwitterUrl)
+        </dd>
+        <dt>
+            @CompanyResource.Linkedin
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LinkedinUrl)
+        </dd>
+
+    </dl>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            @Html.ActionLink(CompanyResource.Edit, "Edit", new { Id = Model.Id }, new { @class = "btn btn-warning" })
+        </div>
+    </div>
+</div>

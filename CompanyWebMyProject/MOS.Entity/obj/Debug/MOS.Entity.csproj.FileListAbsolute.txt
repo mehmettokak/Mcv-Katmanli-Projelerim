@@ -1,0 +1,10 @@
+C:\Users\byguro\Desktop\bitbucket\MOS.Entity\bin\Debug\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Entity\bin\Debug\MOS.Entity.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.csprojResolveAssemblyReference.cache
+C:\Users\byguro\Desktop\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Entity\bin\Debug\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Entity\bin\Debug\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.csprojResolveAssemblyReference.cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Entity\obj\Debug\MOS.Entity.pdb

@@ -1,0 +1,13 @@
+﻿@model Customer.Models.IndexViewModel
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+Html.RenderPartial("Partials/_Index/_Header/_slider", Model.SliderModel);//Slayt
+Html.RenderPartial("Partials/_Index/_works");//Çalısmalarımız
+Html.RenderPartial("Partials/_Index/_skills");//Yeteneklerimiz
+Html.RenderPartial("Partials/_Index/_employees");//Çalısnlarımız
+Html.RenderPartial("Partials/_Index/_newsletter");//Yeni Haber Abonelik
+
+}

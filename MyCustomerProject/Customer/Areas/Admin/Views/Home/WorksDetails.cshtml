@@ -1,0 +1,150 @@
+﻿@model Customer.Models.Classes.WorksModel
+@{
+    ViewBag.Title = "WorksDetail";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Works";
+    TempData["page1"] = "WorksDetails";
+     
+}
+
+<div class="profile">
+    <div class="tabbable-line tabbable-full-width">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab_1_1" data-toggle="tab"> Overview </a>
+            </li>
+            <li>
+                <a href="#tab_1_3" data-toggle="tab"> Account </a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="tab_1_1">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="list-unstyled profile-nav">
+                            <li>
+                                <img src="@Model.ImageUrl" class="img-responsive pic-bordered" alt="" />
+
+                            </li>
+                           
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-8 profile-info">
+                                <h1 class="font-green sbold uppercase">@Model.Title</h1>
+                                <p>
+                                    @Model.Description
+                                </p>
+                                <p>
+                                    <a href="javascript:;"> www.mywebsite.com </a>
+                                </p>
+                                <ul class="list-inline">
+
+                                    <li>
+                                        <i class="fa fa-calendar"></i> Sıra No : @Model.Order
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-briefcase"></i> Durum : @Model.Status
+                                    </li>
+
+                                </ul>
+                            </div>
+                            
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab_1_3">
+@using (Html.BeginForm("SetWorksDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off" }))
+{
+                <div class="row profile-account">
+                    <div class="col-md-3">
+                        <ul class="ver-inline-menu tabbable margin-bottom-10">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab_1-1">
+                                    <i class="fa fa-cog"></i> Work Info
+                                </a>
+                                <span class="after"> </span>
+                            </li>
+                            @*<li>
+                                <a data-toggle="tab" href="#tab_2-2">
+                                    <i class="fa fa-picture-o"></i> Image Info
+                                </a>
+                            </li>*@
+                         
+                        </ul>
+                        <div class="form-group">
+                            <div class="fileinput fileinput-new" data-provides="fileinput">
+                                <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                    <img src="@Model.ImageUrl" alt="@Model.Title" />
+                                    @Html.HiddenFor(model => model.ImageUrl)
+                                </div>
+                                <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                <div>
+                                    <span class="btn default btn-file">
+                                        <span class="fileinput-new"> Select image </span>
+                                        <span class="fileinput-exists"> Change </span>
+                                        @Html.TextBoxFor(model => Model.ImageUrl, new { @type = "file" })
+                                    </span>
+                                    <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+                 
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true,"Aşağıdaki sorunlar oluştu!")
+                        @Html.HiddenFor(model=>Model.Id)
+                        <div class="col-md-9">
+                            <div class="tab-content">
+                                <div id="tab_1-1" class="tab-pane active">
+                                    <form role="form" action="#">
+                                        <div class="form-group">
+                                            @Html.LabelFor(model=>model.Title)
+                                            @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model=>model.Title)
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Description)
+                                            @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Description)
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Order)
+                                            @Html.TextBoxFor(model => model.Order, new { @class = "form-control", @type = "number", @min = "1" })
+                                            @Html.ValidationMessageFor(model => model.Order)
+                                        </div>
+                                        <div class="form-group">
+                                            @Html.LabelFor(model => model.Status)
+                                            @Html.CheckBoxFor(model => model.Status, new { @class = "form-control" })
+                                            @Html.ValidationMessageFor(model => model.Status)
+                                        </div>
+                                        <div class="margiv-top-10">
+                                            <button type="submit" class="btn green"> Kaydet</button>
+                                            <a href="javascript:;" class="btn default"> Vazgeç </a>
+                                        </div>
+                                    </form>
+                                </div>
+                              
+                            
+                            </div>
+                        </div>
+                   
+                    <!--end col-md-9-->
+                </div>
+}
+            </div>
+
+        </div>
+    </div>
+</div>
+

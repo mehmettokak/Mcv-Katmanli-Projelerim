@@ -1,0 +1,94 @@
+﻿@model List<Customer.Models.Classes.SliderModel>
+
+<div class="portlet box red">
+    <div class="portlet-title">
+        <div class="caption">
+            <i class="fa fa-cogs"></i>Update&Delete Slider  <small id="err"></small>
+        </div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"> </a>
+            <a href="#portlet-config" data-toggle="modal" class="config"> </a>
+            <a href="javascript:;" class="reload"> </a>
+
+        </div>
+    </div>
+    <div class="portlet-body">
+        <div class="table-responsive">
+          
+               @using (Html.BeginForm("SetSlider", "Home", FormMethod.Post, new { enctype = "multipart/form-data", @class = "login-form" }))
+            {
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr role="row" class="heading">
+                                <th width="15%"> Resim</th>
+                                <th width="40%"> Başlık</th>
+                                <th width="8%"> Durum </th>
+
+                                <th width="20%">Ayarlar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+
+                                    <td>
+
+
+
+                                        @*<a href="@item.imageUrl" class="fancybox-button" data-rel="fancybox-button">
+                                                  <img class="img-responsive" src="@item.imageUrl"  alt="">
+                                                  <input type="hidden" name="imageUrl" value="@item.imageUrl" />
+                                            </a>*@
+                                        <div class="form-group last">
+
+                                            <div class="col-md-9">
+                                                <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                    <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                                                        <img src="@item.imageUrl"  />
+                                                    </div>
+                                                    <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                                                    <div>
+                                                        <span class="btn default btn-file">
+                                                            <span class="fileinput-new"> Select image </span>
+                                                            <span class="fileinput-exists"> Change </span>
+                                                            <input type="file" name="imageUrl"  />
+
+                                                        </span>
+                                                        <a href="javascript:;" class="btn red fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                      
+                                        <input type="text" name="imageDescription" value="@item.imageDescription " />
+
+                                    </td>
+                                    <td>
+                                        <input type="checkbox" name="imageStatus" @(item.imageStatus ==false ? "" : "checked=checked") />
+                                        <input type="hidden" name="id" value="@item.id " />
+                                    </td>
+
+                                    <td>
+                                      
+                                        <button type="submit" class="btn btn-default btn-sm"><i class="fa fa-times"></i>Update</button>
+                                        <button class="btn btn-default btn-sm"><i class="fa fa-times"></i> Remove</button>
+
+                                    </td>
+                                </tr>
+                            }
+
+
+
+
+                        </tbody>
+                    </table>
+               }
+        </div>
+    </div>
+</div>

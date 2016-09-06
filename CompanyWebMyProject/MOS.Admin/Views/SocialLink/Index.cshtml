@@ -1,0 +1,50 @@
+﻿@model IEnumerable<CompanyWeb.Entity.Model.SocialLink>
+@using CompanyWeb.Admin.Resources.SocialLink
+@{
+    ViewBag.Title = SocialLinkResource.SocialLinkList;
+}
+
+<p>
+    @Html.ActionLink(SocialLinkResource.CreateSocialLink, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @SocialLinkResource.Name
+        </th>
+        <th>
+            @SocialLinkResource.IconUrl
+        </th>
+        <th>
+            @SocialLinkResource.LinkUrl
+        </th>
+        <th>
+            @SocialLinkResource.IsActive
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IconURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LinkURL)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink(SocialLinkResource.Edit, "Edit", new { id = item.ID }) |
+                @Html.ActionLink(SocialLinkResource.Detail, "Details", new { id = item.ID }) |
+                @Html.ActionLink(SocialLinkResource.Delete, "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

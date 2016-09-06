@@ -1,0 +1,40 @@
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.csprojResolveAssemblyReference.cache
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\MOS.Tool.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\MOS.Tool.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.Razor.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\WebMatrix.Data.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\WebMatrix.WebData.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\MOS.Entity.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.Razor.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\WebMatrix.Data.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\bin\Debug\WebMatrix.WebData.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\MOS.Tool.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\MOS.Tool.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\Microsoft.Web.Infrastructure.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.Razor.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Deployment.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Razor.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\WebMatrix.Data.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\WebMatrix.WebData.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.Razor.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Deployment.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\System.Web.WebPages.Razor.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\WebMatrix.Data.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\bin\Debug\WebMatrix.WebData.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.csprojResolveAssemblyReference.cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Tool\obj\Debug\MOS.Tool.pdb

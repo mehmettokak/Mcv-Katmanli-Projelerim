@@ -1,0 +1,73 @@
+﻿@model List<Customer.Models.Classes.Footer.SocialModel>
+@{
+    ViewBag.Title = "Social";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Social";
+}
+
+@Html.Partial("Partials/_pageBar")
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class=" icon-layers font-green"></i>
+                    <span class="caption-subject font-green bold uppercase"><a href="@Url.Action("SocialDetails", "Home")" title="Ekle">Add Social @TempData["err"]</a></span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="mt-element-card mt-card-round mt-element-overlay">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="mt-card-item">
+                                    <div class="mt-card-avatar mt-overlay-1">
+                                        <div class="socicons">
+                                            <a class="socicon-btn socicon-btn-circle socicon-solid bg-green font-white bg-hover-grey-salsa socicon-@item.SocialName tooltips"></a></div>
+
+                                            <div class="mt-overlay">
+                                                <ul class="mt-info">
+                                                    <li>
+                                                        <a class="btn default btn-outline" href="@Url.Action("SocialDetails", "Home", new { @id = item.Id })" title="Güncelle">
+                                                            <i class="icon-magnifier"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a class="btn default btn-outline" href="@Url.Action("RemoveSocial", "Home", new { @id = item.Id })" title="Sil" onclick="return checkConfirm();">
+                                                            <i class=" icon-link">
+                                                            </i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    <div class="mt-card-content">
+                                        <p><a href="@item.SocialUrl">@item.SocialName.ToUpper()</a></p>
+                                        <p>Sıra No : <strong>@item.Order  </strong></p>
+                                        <input type="checkbox" value="@item.Status" @(item.Status == true ? "checked=checked" : null) disabled="disabled" /> <small>@(item.Status == true ? "Aktif" : "")</small>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script>
+    function checkConfirm() {
+        if (confirm('Kullanıcı bilgileri sistemden silinsin mi?')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>
+

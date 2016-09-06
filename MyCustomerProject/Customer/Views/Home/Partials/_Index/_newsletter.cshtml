@@ -1,0 +1,48 @@
+﻿@{
+    var Model = new Customer.Models.Classes.NewsLetterModel();
+
+}
+
+<section id="fh5co-subscribe">
+    <div class="container">
+
+        <h3 class="animate-box"><label for="email">Haberiniz Olsun.</label></h3>
+        @*@using (Html.BeginForm("SetEmail", "Home", FormMethod.Post, new { @class = "animate-box" }))
+            {*@
+        <div class="animate-box">
+
+
+            @Html.AntiForgeryToken()
+            <small>@Html.ValidationSummary(true, "Aşağıdaki Sorunlar Olustu.")</small>
+            <small id="newsletterinfo"></small>
+            <i class="fh5co-icon icon-paper-plane"></i>
+            @Html.TextBoxFor(model => Model.Email, new { @class = "form-control", placeholder = "Email Adresinizi Giriniz?" })
+            <small>@Html.ValidationMessageFor(model => Model.Email)</small>
+
+            <button id="newslessteronay" value="Kaydet" class="btn btn-primary" onclick="newsletterprocess(true);"></button>
+                <small><button class="btn btn-danger" onclick="newsletterprocess(false);" id="newslessteriptal">Abonelik İptal</button></small>
+
+</div>
+
+
+
+
+    </div>
+
+</section>
+
+<script>
+
+    var newsletterprocess = function (parametre) {
+            var email = $("#Email").val();
+            $.ajax({
+                type: 'POST',
+                url: '@Url.Action("SetEmail", "Home")',
+                data: { Email: email, Status: parametre },
+                success: function (result) {
+                    $("#newsletterinfo").text(result);
+                },
+            });
+        }
+
+</script>

@@ -1,0 +1,57 @@
+﻿@model IEnumerable<CompanyWeb.Entity.Model.Employee>
+@using CompanyWeb.Admin.Resources.Employee
+@{
+    ViewBag.Title = EmployeeResource.EmployeeList;
+}
+
+<h2>@EmployeeResource.EmployeeList</h2>
+
+<p>
+    @Html.ActionLink(EmployeeResource.CreateEmployee, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @EmployeeResource.FirstName
+        </th>
+        <th>
+            @EmployeeResource.LastName
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @EmployeeResource.MobilePhone
+        </th>
+        <th>
+            @EmployeeResource.IsActive
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MobilePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @Html.ActionLink(EmployeeResource.Edit, "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+            @Html.ActionLink(EmployeeResource.Detail, "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+            @Html.ActionLink(EmployeeResource.Delete, "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

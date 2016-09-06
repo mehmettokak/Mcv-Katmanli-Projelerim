@@ -1,0 +1,23 @@
+﻿
+<div class="page-bar">
+    <ul class="page-breadcrumb">
+        <li>
+            <a href="/Admin/Home/Index">Dashboard</a>
+            <i class="fa fa-circle"></i>
+        </li>
+        <li>
+            <a href="#"> @TempData["pageName"]</a>
+            <i class="fa fa-circle"></i>
+        </li>
+       
+         <li>
+             <a href="/Admin/Home/@TempData["page"]/">@TempData["page"]</a>
+                    <i class="fa fa-circle"></i>
+                </li>
+        <li>
+            <a href="#">@TempData["page1"]</a>
+            <i class="fa fa-circle"></i>
+        </li>
+     </ul>
+    <div style="float:right;color:gray;">@DateTime.Now.ToString("dd-MM-yyyy  HH : mm : ss")</div>
+</div>

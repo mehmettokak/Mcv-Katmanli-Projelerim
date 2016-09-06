@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CompanyWeb.Entity.Model.Reference>
+@using CompanyWeb.Admin.Resources.Reference
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    @Html.ActionLink(ReferenceResource.CreateReference, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @ReferenceResource.ImageUrl
+        </th>
+        <th>
+            @ReferenceResource.RowNumber
+        </th>
+        <th>
+            @ReferenceResource.IsTestimonial
+        </th>
+        <th>
+            @ReferenceResource.IsActive
+        </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @{
+                    if (!string.IsNullOrEmpty(item.ImageURL))
+                    {
+                        <text><img src="@item.ImageURL" alt="" style="max-height: 100px" /></text>
+                    }
+                }
+            </td >
+            <td>
+                @Html.DisplayFor(modelItem => item.RowNumber)
+            </td>
+             <td>
+                @Html.DisplayFor(modelItem => item.IsTestimonial)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsActive)
+            </td>
+            <td>
+                @Html.ActionLink(ReferenceResource.Edit, "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+                @Html.ActionLink(ReferenceResource.Detail, "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+                @Html.ActionLink(ReferenceResource.Delete, "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+                    }
+
+</table>
+

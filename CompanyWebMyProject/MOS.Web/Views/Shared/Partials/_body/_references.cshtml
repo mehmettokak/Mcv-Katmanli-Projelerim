@@ -1,0 +1,23 @@
+﻿@model List<CompanyWeb.Web.Models.ReferenceViewModel>
+@using CompanyWeb.Web.Resources
+<div class="our-clients">
+    <h2><span class="section-footer-title">@MainResource.references</span></h2>
+</div>
+<div class="client-list">
+    <div data-scrollreveal="enter right move 60px after 0.00s over 2.5s">
+        <table style="width: 1145px; height: 111px" cellspacing="1" cellpadding="1" width="1200" border="0">
+            <tbody>
+                <tr>
+                    <td>
+                        <marquee scrollamount="15" scrolldelay="40" top="0" left="200" frameborder="0" onmouseout_fckprotectedatt="onmouseout" onmouseover_fckprotectedatt="onmouseover">
+                            @foreach (var item in Model.Where(x=>x.IsTestimonial==false))
+                            {
+                                <a target="_blank" href="@item.WebURL"><img src="@item.ImageURL" alt="@item.LogoName" /></a>
+                            }
+                        </marquee>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+</div>

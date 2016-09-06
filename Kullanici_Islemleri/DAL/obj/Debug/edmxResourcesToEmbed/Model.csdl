@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="USER_SQLModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ROLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="SUBROLE" Relationship="Self.ROLESUBROLE" FromRole="ROLE" ToRole="SUBROLE" />
+    <NavigationProperty Name="USER" Relationship="Self.USERROLE" FromRole="ROLE" ToRole="USER" />
+  </EntityType>
+  <EntityType Name="SUBROLE">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolekey" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="description" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="ROLE" Relationship="Self.ROLESUBROLE" FromRole="SUBROLE" ToRole="ROLE" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="USER">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="surname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="createdate" Type="DateTime" Precision="3" />
+    <Property Name="activasyonkey" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="activasyondate" Type="DateTime" Precision="3" />
+    <Property Name="status" Type="Boolean" />
+    <NavigationProperty Name="ROLE" Relationship="Self.USERROLE" FromRole="USER" ToRole="ROLE" />
+  </EntityType>
+  <Association Name="ROLESUBROLE">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="*" />
+    <End Role="SUBROLE" Type="Self.SUBROLE" Multiplicity="*" />
+  </Association>
+  <Association Name="USERROLE">
+    <End Role="ROLE" Type="Self.ROLE" Multiplicity="*" />
+    <End Role="USER" Type="Self.USER" Multiplicity="*" />
+  </Association>
+  <EntityContainer Name="USER_SQLEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ROLE" EntityType="Self.ROLE" />
+    <EntitySet Name="SUBROLE" EntityType="Self.SUBROLE" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="USER" EntityType="Self.USER" />
+    <AssociationSet Name="ROLESUBROLE" Association="Self.ROLESUBROLE">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="SUBROLE" EntitySet="SUBROLE" />
+    </AssociationSet>
+    <AssociationSet Name="USERROLE" Association="Self.USERROLE">
+      <End Role="ROLE" EntitySet="ROLE" />
+      <End Role="USER" EntitySet="USER" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

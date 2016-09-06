@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CompanyWeb.Entity.Model.Language>
+@using CompanyWeb.Admin.Resources.Language
+@{
+    ViewBag.Title = LanguageResource.Languages;
+}
+
+<p>
+    @Html.ActionLink(LanguageResource.CreateLanguage, "Create", null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @LanguageResource.Name
+        </th>
+        <th>
+            @LanguageResource.Code
+        </th>
+        <th>
+            @LanguageResource.IsActive
+        </th>
+        <th>
+            @LanguageResource.IconUrl
+        </th>
+        <th>
+            @LanguageResource.Process
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsActive)
+        </td>
+        <td>
+            @{
+                if (!string.IsNullOrEmpty(item.IconURL))
+                {
+                    <text><img src="@item.IconURL" alt="" style="max-height:34px"/></text>
+                }
+            }
+        </td>
+        <td>
+            @Html.ActionLink(LanguageResource.Edit, "Edit", new { id = item.ID }, new { @class = "btn btn-warning" })
+            @Html.ActionLink(LanguageResource.Detail, "Details", new { id = item.ID }, new { @class = "btn btn-info" })
+            @Html.ActionLink(LanguageResource.Delete, "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

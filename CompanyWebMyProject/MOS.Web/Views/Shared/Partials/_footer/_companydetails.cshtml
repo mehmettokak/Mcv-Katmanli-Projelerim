@@ -1,0 +1,39 @@
+﻿@model CompanyWeb.Web.Models.CompanyViewModel
+
+<div class="col-md-3 company-details">
+    <div class="icon-top red-text">
+        <img src="/Content/lite/images/map25-redish.png" alt="@Model.Adress" />
+    </div>
+    <div class="zerif-footer-address">@Model.Adress</div>
+</div>
+<div class="col-md-3 company-details">
+    <div class="icon-top green-text">
+        <img src="/Content/lite/images/envelope4-green.png" alt="@Model.EMail" />
+    </div>
+    <div class="zerif-footer-email">@Model.EMail</div>
+</div>
+<div class="col-md-3 company-details">
+    <div class="icon-top blue-text">
+        <img src="/Content/lite/images/telephone65-blue.png" alt="@Model.Phone1" />
+    </div>
+    <div class="zerif-footer-phone">@Model.Phone1</div>
+    <div class="zerif-footer-phone">@Model.Phone2</div>
+    <div class="zerif-footer-phone">@Model.Fax</div>
+</div>
+
+<div class="col-md-3 copyright">
+    <ul class="social">
+        <li>
+            <a target="_blank" href="@Model.FacebookUrl"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+            <a target="_blank" href="@Model.TwitterUrl"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+            <a target="_blank" href="@Model.LinkedinUrl"><i class="fa fa-linkedin"></i></a>
+        </li>
+
+    </ul>
+    <p id="zerif-copyright">@Model.Copyright</p>
+  
+</div>

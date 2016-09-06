@@ -1,0 +1,334 @@
+﻿@model Customer.Models.Classes.EmployeesModel
+@{
+    ViewBag.Title = "EmployeesDetails";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Employees";
+    TempData["page1"] = "EmployeesDetails";
+     
+}
+<link rel="stylesheet" href="/crop/demo_files/main.css" type="text/css" />
+<link rel="stylesheet" href="/crop/demo_files/demos.css" type="text/css" />
+<link rel="stylesheet" href="/crop/css/jquery.Jcrop.css" type="text/css" />
+<script src="/crop/js/jquery.min.js"></script>
+<script src="/crop/js/jquery.Jcrop.js"></script>
+<style type="text/css">
+    /* Apply these styles only when #preview-pane has
+    been placed within the Jcrop widget */
+    .jcrop-holder #preview-pane {
+        display: block;
+        position: absolute;
+        z-index: 2000;
+        top: 10px;
+        right: -280px;
+        padding: 6px;
+        border: 1px rgba(0,0,0,.4) solid;
+        background-color: white;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        border-radius: 6px;
+        -webkit-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+        box-shadow: 1px 1px 5px 2px rgba(0, 0, 0, 0.2);
+    }
+
+    /* The Javascript code will set the aspect ratio of the crop
+    area based on the size of the thumbnail preview,
+    specified here */
+    #preview-pane .preview-container {
+        width: 250px;
+        height: 170px;
+        overflow: hidden;
+    }
+</style>
+
+<div class="profile">
+    <div class="tabbable-line tabbable-full-width">
+        <ul class="nav nav-tabs">
+            <li class="active">
+                <a href="#tab_1_1" data-toggle="tab"> Overview </a>
+            </li>
+            <li>
+                <a href="#tab_1_3" data-toggle="tab"> Account </a>
+            </li>
+
+        </ul>
+        <div class="tab-content">
+
+            <div class="tab-pane active" id="tab_1_1">
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <ul class="list-unstyled profile-nav">
+                            <li>
+                                <img src="@Model.Image" class="img-responsive pic-bordered" alt="" />
+
+                            </li>
+                         
+                        </ul>
+                    </div>
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-md-8 profile-info">
+                                <h1 class="font-green sbold uppercase">@Model.Name @Model.SurName - <strong>@Model.Title</strong></h1>
+                                <p>
+                                    @Model.Description
+                                </p>
+                                <p>
+                                    @Model.Email <strong>@Model.Telephone</strong>
+                                </p>
+                                <p>
+                                    <a href="javascript:;"> @Model.Facebook</a>
+                                    <a href="javascript:;"> @Model.Twitter</a>
+                                </p>
+                                <ul class="list-inline">
+
+                                    <li>
+                                        <i class="fa fa-calendar"></i> Sıra No : @Model.Order
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-briefcase"></i> Durum : @Model.Status
+                                    </li>
+
+                                </ul>
+                            </div>
+                         
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+
+            <div class="tab-pane" id="tab_1_3">
+                <div class="row profile-account">
+                    <div class="col-md-3">
+                        <ul class="ver-inline-menu tabbable margin-bottom-10">
+                            <li class="active">
+                                <a data-toggle="tab" href="#tab_1-1">
+                                    <i class="fa fa-cog"></i> Work Info
+                                </a>
+                                <span class="after"> </span>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#tab_2-2">
+                                    <i class="fa fa-picture-o"></i> Other Info
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#tab_2-3">
+                                    <i class="fa fa-picture-o"></i> Image Info
+                                </a>
+                            </li>
+                            <li>
+                                <a data-toggle="tab" href="#tab_2-4">
+                                    <i class="fa fa-picture-o"></i> Crop Image
+                                </a>
+                            </li>
+                         </ul>
+                      
+
+                    </div>
+                    @using (Html.BeginForm("SetEmployeesDetails", "Home", FormMethod.Post, new { enctype = "multipart/form-data", autocomplete = "off" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "Aşağıdaki sorunlar oluştu!")
+                        @Html.HiddenFor(model => Model.Id)
+    <div class="col-md-9">
+        <div class="tab-content">
+            <div id="tab_1-1" class="tab-pane active">
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Name)
+                    @Html.TextBoxFor(model => model.Name, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Name)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.SurName)
+                    @Html.TextBoxFor(model => model.SurName, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.SurName)
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Title)
+                    @Html.TextBoxFor(model => model.Title, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Title)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Description)
+                    @Html.TextAreaFor(model => model.Description, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Description)
+                </div>
+
+
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Order)
+                    @Html.TextBoxFor(model => model.Order, new { @class = "form-control", @type = "number", @min = "1" })
+                    @Html.ValidationMessageFor(model => model.Order)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Status)
+                    @Html.CheckBoxFor(model => model.Status, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Status)
+                </div>
+                <div class="margiv-top-10">
+                    <button type="submit" class="btn green"> Kaydet</button>
+                    <a href="javascript:;" class="btn default"> Vazgeç </a>
+                </div>
+
+            </div>
+            <div id="tab_2-2" class="tab-pane">
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Telephone)
+                    @Html.TextBoxFor(model => model.Telephone, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Telephone)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Email)
+                    @Html.TextBoxFor(model => model.Email, new { @class = "form-control" ,@type="email" })
+                    @Html.ValidationMessageFor(model => model.Email)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Facebook)
+                    @Html.TextAreaFor(model => model.Facebook, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Facebook)
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Twitter)
+                    @Html.TextAreaFor(model => model.Twitter, new { @class = "form-control" })
+                    @Html.ValidationMessageFor(model => model.Twitter)
+                </div>
+
+                <div class="margiv-top-10">
+                    <button type="submit" class="btn green"> Kaydet</button>
+                    <a href="javascript:;" class="btn default"> Vazgeç </a>
+                </div>
+
+            </div>
+
+            <div id="tab_2-3" class="tab-pane">
+                <p>
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
+                    eiusmod.
+                </p>
+
+                <div class="form-group">
+                    <div class="fileinput fileinput-new" data-provides="fileinput">
+                        <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
+                            <img src="@Model.Image" alt="@Model.Name @Model.SurName" />
+                            @Html.HiddenFor(model => model.Image)
+                        </div>
+                        <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"> </div>
+                        <div>
+                            <span class="btn default btn-file">
+                                <span class="fileinput-new">Resim Ekleyin </span>
+                                <span class="fileinput-exists"> Değistir </span>
+                                @Html.TextBoxFor(model => Model.Image, new { @type = "file" })
+                            </span>
+                            <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Sil </a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="margin-top-10">
+                    <button type="submit" class="btn green"> Kaydet </button>
+                    <a href="javascript:;" class="btn default"> Vazgeç</a>
+                </div>
+
+            </div>
+            <div id="tab_2-4" class="tab-pane">
+              
+
+                <div class="container">
+                    <div class="row">
+                        <div class="span12">
+                            <div class="jc-demo-box">
+                                <p><a href="#" id="hl-crop-image">Crop Image</a></p>
+                                <img src="@Model.Image" id="target" alt="[Jcrop Example]" />
+                                <div id="preview-pane">
+                                    <div class="preview-container">
+                                        <img src="@Model.Image" id="mehmet"style="width:300px;height:300px;" class="jcrop-preview" alt="Preview" />
+                                    </div>
+                                </div>
+
+
+                                <div class="clearfix"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+
+        </div>
+    </div>
+                    }
+
+                    <!--end col-md-9-->
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var imageCropWidth = 0;
+    var imageCropHeight = 0;
+    var cropPointX = 0;
+    var cropPointY = 0;
+
+    $(document).ready(function () {
+        initCrop();
+    });
+
+    $("#hl-crop-image").on("click", function (e) {
+        e.preventDefault();
+        cropImage();
+    });
+
+    function initCrop() {
+        $('#target').Jcrop({
+            onChange: setCoordsAndImgSize,
+            aspectRatio: 1
+        });
+    }
+
+    function setCoordsAndImgSize(e) {
+
+        imageCropWidth = e.w;
+        imageCropHeight = e.h;
+
+        cropPointX = e.x;
+        cropPointY = e.y;
+    }
+
+    function cropImage() {
+
+        if (imageCropWidth == 0 && imageCropHeight == 0) {
+            alert("Please select crop area.");
+            return;
+        }
+
+        $.ajax({
+            url: '/Admin/Home/CropImage',
+            type: 'POST',
+            data: {
+                imagePath: $("#target").attr("src"),
+                cropPointX: cropPointX,
+                cropPointY: cropPointY,
+                imageCropWidth: imageCropWidth,
+                imageCropHeight: imageCropHeight
+            },
+            success: function (data) {
+                $("#mehmet")
+                    .attr("src", data.photoPath)
+                    .show();
+            },
+            error: function (data) { }
+        });
+    }
+
+</script>

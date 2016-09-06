@@ -1,0 +1,119 @@
+﻿@model List<Customer.Models.Classes.About.AboutModel>
+@{
+    ViewBag.Title = "About";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "About";
+}
+
+@Html.Partial("Partials/_pageBar")
+
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet light bordered">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <i class="icon-settings font-dark"></i>
+                    <span class="caption-subject bold uppercase"> About @TempData["err"]</span>
+                </div>
+
+            </div>
+            <div class="portlet-body">
+                <div class="table-toolbar">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="btn-group">
+
+                                <a href=@Url.Action("AboutDetails", "Home") id="sample_editable_1_new" class="btn sbold green">
+                                    Add New
+                                    <i class="fa fa-plus"></i>
+
+                                </a>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <table class="table table-striped table-bordered table-hover table-checkable order-column" id="sample_1">
+                    <thead>
+                        <tr>
+                            <th>
+                                <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                    <input type="checkbox" class="group-checkable" data-set="#sample_1 .checkboxes" />
+                                    <span></span>
+                                </label>
+                            </th>
+
+                            <th>Resim </th>
+                            <th>Başlık </th>
+                            <th> Açıklama  </th>
+                            <th> Durum  </th>
+                            <th>Ayarlar</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+
+
+                            <tr class="odd gradeX">
+                                <td>
+                                    <label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">
+                                        <input type="checkbox" class="checkboxes" value="1" />
+                                        <span></span>
+                                    </label>
+                                </td>
+                                <td>
+                                    @{
+                            if (item.FilePath.Contains("image"))
+                            {
+                                <img src="@item.FilePath" style="width:20px;height:20px;">
+                            }
+                            else
+                            {
+                                <video style="height:40px;width:40px;" autoplay>
+                                    <source src="@item.FilePath" type="video/mp4" />
+                                </video>
+
+                            }
+                                    }
+                                </td>
+                                <td>
+
+                                    <div class="form-group">
+                                        @item.Title
+                                    </div>
+                                </td>
+                                <td>
+
+                                    <div class="form-group">
+                                        @item.Description
+                                    </div>
+                                </td>
+                                <td>
+                                    <span class="label label-sm label-@(item.Status == true ? "success" : "danger")"> @item.Status.ToString() </span>
+                                </td>
+
+                                <td>
+                                    <a href="/Admin/Home/AboutDetails/@item.Id" class="btn btn-outline btn-circle btn-sm dark black">
+                                        <i class="fa fa-plus"></i> Detay
+                                    </a>
+                                    <a href="/Admin/Home/RemoveAbout/@item.Id" class="btn btn-outline btn-circle btn-sm dark black">
+                                        <i class="fa fa-plus"></i> Sil
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- END EXAMPLE TABLE PORTLET-->
+    </div>
+</div>
+

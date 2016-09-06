@@ -1,0 +1,154 @@
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.csprojResolveAssemblyReference.cache
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.About.AboutResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.AdminResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Company.CompanyResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Employee.EmployeeResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Language.LanguageResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Reference.ReferenceResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Slider.SliderResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.SocialLink.SocialLinkResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.User.UserResource.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.About.AboutResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.AdminResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Company.CompanyResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Employee.EmployeeResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Language.LanguageResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Reference.ReferenceResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Slider.SliderResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.User.UserResource.tr.resources
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.csproj.GenerateResource.Cache
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\csc.exe
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\vbc.exe
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\VBCSCompiler.exe
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Admin.dll.config
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Admin.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Admin.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\tr\MOS.Admin.resources.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Antlr3.Runtime.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\EntityFramework.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\EntityFramework.SqlServer.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Microsoft.Web.Helpers.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.BAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.DAL.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Entity.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Tool.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Newtonsoft.Json.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Helpers.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Mvc.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Optimization.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Razor.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.Deployment.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.Razor.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\WebGrease.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\WebMatrix.Data.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\WebMatrix.WebData.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.BAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.DAL.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Entity.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\MOS.Tool.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\EntityFramework.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\EntityFramework.SqlServer.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Helpers.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Mvc.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Optimization.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.Razor.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.Deployment.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\System.Web.WebPages.Razor.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Antlr3.Runtime.pdb
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\WebMatrix.Data.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\WebMatrix.WebData.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\bin\Newtonsoft.Json.xml
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\tr\MOS.Admin.resources.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.dll
+C:\Users\byguro\Desktop\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\csc.exe
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\vbc.exe
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\VBCSCompiler.exe
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Admin.dll.config
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Admin.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Admin.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\tr\MOS.Admin.resources.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Antlr3.Runtime.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\EntityFramework.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\EntityFramework.SqlServer.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Microsoft.Web.Helpers.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.BAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.DAL.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Entity.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Tool.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Newtonsoft.Json.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Helpers.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Mvc.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Optimization.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Razor.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.Razor.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\WebGrease.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\WebMatrix.Data.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\WebMatrix.WebData.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.BAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.DAL.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Entity.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\MOS.Tool.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\EntityFramework.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\EntityFramework.SqlServer.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Helpers.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Mvc.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Optimization.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.Razor.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\System.Web.WebPages.Razor.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Antlr3.Runtime.pdb
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\WebMatrix.Data.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\WebMatrix.WebData.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\bin\Newtonsoft.Json.xml
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.csprojResolveAssemblyReference.cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.About.AboutResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.AdminResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Company.CompanyResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Employee.EmployeeResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Language.LanguageResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Reference.ReferenceResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Slider.SliderResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.SocialLink.SocialLinkResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.User.UserResource.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.About.AboutResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.AdminResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Company.CompanyResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Employee.EmployeeResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Language.LanguageResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Reference.ReferenceResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.Slider.SliderResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.Resources.User.UserResource.tr.resources
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.csproj.GenerateResource.Cache
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\tr\MOS.Admin.resources.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.dll
+C:\Users\Guest\Desktop\Yeni klasör (4)\bitbucket\MOS.Admin\obj\Debug\MOS.Admin.pdb

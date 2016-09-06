@@ -1,0 +1,74 @@
+﻿@model List<Customer.Models.Classes.SkillsModel>
+           
+@{
+    ViewBag.Title = "Skills";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+    TempData["pageName"] = "Home";
+    TempData["page"] = "Skills";
+    
+}
+@Html.Partial("Partials/_pageBar")
+<div class="row">
+    <div class="col-md-12">
+        <div class="portlet light portlet-fit bordered">
+            <div class="portlet-title">
+                <div class="caption">
+                    <i class=" icon-layers font-green"></i>
+                    <span class="caption-subject font-green bold uppercase"><a href="@Url.Action("SkillsDetails", "Home")" title="Ekle">Add Skills @TempData["err"]</a></span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="mt-element-card mt-card-round mt-element-overlay">
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+                            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                                <div class="mt-card-item">
+                                    <div class="mt-card-avatar mt-overlay-1">
+                                       
+                                                    <i class="icon-@item.IconName"></i>
+                                                
+
+                                        <div class="mt-overlay">
+                                            <ul class="mt-info">
+                                                <li>
+                                                    <a class="btn default btn-outline" href="@Url.Action("SkillsDetails", "Home", new { @id = item.Id })" title="Güncelle">
+                                                        <i class="icon-magnifier"></i>
+                                                    </a>
+                                                </li>
+                                                <li>
+                                                    <a class="btn default btn-outline" href="@Url.Action("RemoveSkills", "Home", new { @id = item.Id })" title="Sil" onclick="return checkConfirm();">
+                                                        <i class=" icon-link">
+                                                        </i>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="mt-card-content">
+                                        <h3 class="mt-card-name">@Helper.TextLength(item.Title,15) </h3><br />
+                                        <p class="mt-card-desc font-grey-mint">@Helper.TextLength(item.Description,20)</p>
+                                        <p>Sıra No : <strong>@item.Order  </strong></p>
+                                        <input type="checkbox" value="@item.Status" @(item.Status == true ? "checked=checked" : null) disabled="disabled" /> <small>@(item.Status == true ? "Aktif" : "")</small>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                       
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function checkConfirm() {
+        if (confirm('Kullanıcı bilgileri sistemden silinsin mi?')) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

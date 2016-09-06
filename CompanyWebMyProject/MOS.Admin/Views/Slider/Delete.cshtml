@@ -1,0 +1,53 @@
+﻿@model CompanyWeb.Admin.Models.SliderViewModel
+@using CompanyWeb.Admin.Resources.Slider
+@{
+    ViewBag.Title = SliderResource.Delete;
+}
+
+<h3>@SliderResource.SliderDeleteProcess</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @SliderResource.Image
+        </dt>
+
+        <dd>
+            @{
+                if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <text>
+                        <img src="@Model.ImageUrl" alt="" style="max-height: 300px" />
+                    </text>
+                }
+            }
+        </dd>
+
+        <dt>
+            @SliderResource.Title
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @SliderResource.IsActive
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsActive)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color col-md-offset-2 col-md-10">
+            @Html.ActionLink(SliderResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+            <input type="submit" value="@SliderResource.Delete" class="btn btn-danger" />
+        </div>
+    }
+</div>

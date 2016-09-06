@@ -1,0 +1,36 @@
+﻿@{
+    var model = new Customer.Models.LayoutViewModel();
+
+    var _wp = new Customer.BAL.Providers.IndexProvider.WorksProvider();
+    model.WorksListModel = _wp.GetWorksListModel();
+}
+<section id="fh5co-projects">
+    <div class="container">
+        <div class="row row-bottom-padded-md">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <h2 class="fh5co-lead animate-box">Çalışmalarımız</h2>
+              
+            </div>
+        </div>
+
+
+
+        <div class="row">
+            @foreach (var item in model.WorksListModel)
+            {
+                <div class="col-md-4 col-sm-6 col-xxs-12 animate-box">
+                    <a href="@Url.Content(item.ImageUrl)" class="fh5co-project-item image-popup">
+                        <img src="@Url.Content(item.ImageUrl)" alt="Image" class="img-responsive" style="width:400px;height:200px;">
+                        <div class="fh5co-text">
+                            <h2>@item.Title</h2>
+                            <p>@item.Description.Substring(0,100) ...</p>
+                        </div>
+                    </a>
+                </div>
+            }
+           
+           
+
+        </div>
+    </div>
+</section>

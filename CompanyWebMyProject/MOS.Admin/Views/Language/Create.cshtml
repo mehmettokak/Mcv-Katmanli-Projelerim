@@ -1,0 +1,56 @@
+﻿@model CompanyWeb.Entity.Model.Language
+@using CompanyWeb.Admin.Resources.Language
+@{
+    ViewBag.Title = LanguageResource.CreateLanguage;
+}
+
+@using (Html.BeginForm("Create", "Language", FormMethod.Post, new { @class = "avatar-form", enctype = "multipart/form-data" , autocomplete="off" }))
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>@LanguageResource.CreateLanguage</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Name">@LanguageResource.Name</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Code">@LanguageResource.Code</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Code, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Code, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IconURL">@LanguageResource.IconUrl</label>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.IconURL, new { htmlAttributes = new { @class = "form-control" ,@type="file"} })
+                @Html.ValidationMessageFor(model => model.IconURL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="IsActive">@LanguageResource.IsActive</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.IsActive, new { htmlAttributes = new { @class = "col-md-1" } })
+                    @Html.ValidationMessageFor(model => model.IsActive, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                @Html.ActionLink(LanguageResource.BackToList, "Index", null, new { @class = "btn btn btn-primary" })
+                <input type="submit" value="@LanguageResource.Save" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}

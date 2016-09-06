@@ -1,0 +1,31 @@
+﻿@model List<CompanyWeb.Web.Models.ServiceViewModel>
+@using CompanyWeb.Web.Resources
+<section class="focus" id="focus">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="dark-text">@MainResource.services</h2>
+            <div class="section-legend"> </div>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+                    <div class="service-icon">
+                        <a href="@Url.Action("Index","Service",new { id=item.Id})"><i class="pixeden" style="background:url(@item.IconUrl) no-repeat center;width:100%; height:100%;"></i> </a>
+                    </div>
+                    <a href="@Url.Action("Index","Service",new { id=item.Id})">  <h3 class="red-border-bottom">@item.Name</h3></a>
+                    <p>
+                        <ul>
+                            @foreach (var item2 in item.Categories)
+                            {
+                                <li><a href="@Url.Action("Index","Service",new { id=item2.Id})">@item2.Name</a></li>
+
+                            }
+                        </ul>
+                    </p>
+                </div>
+            }
+        </div>
+    </div>
+</section>
+

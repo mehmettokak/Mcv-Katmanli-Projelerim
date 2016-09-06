@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CUSTOMER_SQLModelStoreContainer" CdmEntityContainer="CUSTOMER_SQLEntities">
+    <EntitySetMapping Name="MENU">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.MENU">
+        <MappingFragment StoreEntitySet="MENU">
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="order" ColumnName="order" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SLIDER">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.SLIDER">
+        <MappingFragment StoreEntitySet="SLIDER">
+          <ScalarProperty Name="imageDescription" ColumnName="imageDescription" />
+          <ScalarProperty Name="imageStatus" ColumnName="imageStatus" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WORK">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.WORK">
+        <MappingFragment StoreEntitySet="WORK">
+          <ScalarProperty Name="contentUrl" ColumnName="contentUrl" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="imageUrl" ColumnName="imageUrl" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SKILL">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.SKILL">
+        <MappingFragment StoreEntitySet="SKILL">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="iconName" ColumnName="iconName" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EMPLOYEES">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.EMPLOYEES">
+        <MappingFragment StoreEntitySet="EMPLOYEES">
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="twitter" ColumnName="twitter" />
+          <ScalarProperty Name="facebook" ColumnName="facebook" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="order" ColumnName="order" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="image" ColumnName="image" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="nameSurname" ColumnName="nameSurname" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NEWSLETTER">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.NEWSLETTER">
+        <MappingFragment StoreEntitySet="NEWSLETTER">
+          <ScalarProperty Name="datetime" ColumnName="datetime" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ABOUT">
+      <EntityTypeMapping TypeName="CUSTOMER_SQLModel.ABOUT">
+        <MappingFragment StoreEntitySet="ABOUT">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="sliderimage" ColumnName="sliderimage" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

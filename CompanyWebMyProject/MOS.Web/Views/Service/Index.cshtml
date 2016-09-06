@@ -1,0 +1,95 @@
+﻿@model CompanyWeb.Web.Models.ServiceModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="content" class="site-content">
+    <div class="container">
+        @{
+            if (Model.ServisModel != null)
+            {
+                <div class="content-left-wrap col-md-9">
+                    <div id="primary" class="content-area">
+                        <main id="main" class="site-main">
+                            <header class="page-header">
+                                <h1 class="page-title">@Model.ServisModel.Name</h1>
+
+                            </header>
+                            <article id="post-3807" class="post-3807 post type-post status-publish format-standard has-post-thumbnail hentry category-uncategorized">
+                                <div class="listpost-content-wrap">
+                                    <div class="list-post-top">
+                                        <div class="post-img-wrap">
+
+                                            <img width="250" height="250" src="@Model.ServisModel.IconUrl" tppabs="#" class="attachment-post-thumbnail size-post-thumbnail wp-post-image" alt="@Model.ServisModel.Name">
+
+                                        </div>
+                                        <div class="entry-content">
+                                            <p>@Model.ServisModel.Content</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </main>
+                    </div>
+                </div>
+                <div class="sidebar-wrap col-md-3 content-left-wrap">
+                    <div id="secondary" class="widget-area" role="complementary">
+
+                        <aside id="categories-2" class="widget widget_categories">
+                            @foreach (var item in Model.CategoryListModel)
+                            {
+                                <h2 class="widget-title">@item.Name</h2>
+                                <ul>
+                                    @foreach (var item1 in item.Categories)
+                                    {
+                                        <li class="cat-item cat-item-1">
+                                            <a href="@Url.Action("Index","Service",new { @id=item1.Id})" tppabs="#">@item1.Name</a>
+                                        </li>
+
+                                    }
+
+
+                                </ul>
+                            }
+
+                        </aside>
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <section class="focus" id="focus">
+                    <div class="container">
+                        <div class="section-header">
+                            <h2 class="dark-text">MBTI®</h2>
+                            <div class="section-legend">MBTI ön yazı</div>
+                        </div>
+                        <div class="row">
+                            
+                            @foreach (var item in Model.SubCategoryListModel)
+                            {
+                                <div class="col-lg-3 col-sm-3 focus-box" data-scrollreveal="enter left after 0.15s over 1s">
+                                    <div class="service-icon">
+                                        <a href="@Url.Action("Index","Service",new { @id=item.Id})"><i class="pixeden" style="background:url(Content/wp-content/themes/zerif-lite/images/mbti/ENFP.png) no-repeat center;width:100%; height:100%;"></i> </a>
+                                    </div>
+                                    <a href="@Url.Action("Index","Service",new { @id=item.Id})"> <h3 class="red-border-bottom">@item.Name</h3></a>
+                                    <p>
+                                       @item.Description
+                                    </p>
+                                </div>
+                            }
+                          
+                         
+                        </div>
+                    </div>
+                </section>
+            }
+        }
+       
+       
+    </div>
+</div>
+
